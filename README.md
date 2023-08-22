@@ -20,3 +20,20 @@
 - gives feature to host on https also instead of localhost
 - does Tree Shaking - i.e. removes unused code(functions, variables not in use)
 - different dev and production bundles
+
+# Food ordering app
+   
+  /*
+    Header
+     - Logo
+     - Nav Items
+    Body
+     - Search
+     - RestaurantContainer
+       - RestaurantCard
+    Footer
+     - Copyright
+     - Links
+     - Address
+     - Contact
+  */
