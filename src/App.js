@@ -2,6 +2,7 @@
   import React, { lazy, Suspense } from "react";
   import ReactDOM from "react-dom/client";
   import Header from "./components/Header";
+  import Home from "./components/Home";
   import About from "./components/About";
   import Body from "./components/Body";
   import Contact from "./components/Contact";
@@ -33,6 +34,10 @@
         children: [
           {
             path: "/",
+            element: <Home />
+          },
+          {
+            path: "/restaurants",
             element: <Body />
           },
           {
