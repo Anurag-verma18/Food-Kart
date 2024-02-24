@@ -14,10 +14,11 @@ const Header = () => {
     console.log(cartItems);
 
     return (
-      <div className="flex justify-between bg-amber-800 shadow-lg rounded-sm mb-1 mx-1">
-        <div className="logo-container">
-          <img className="w-28" 
+      <div className="flex justify-between bg-transparent sticky z-10 shadow-md rounded-sm mb-1 mx-0">
+        <div className="logo-container flex items-center ml-10">
+          <img className="w-32" 
              src = {LOGO_URL}
+             alt="applogo"
           />
         </div>
         <div className="flex items-center">

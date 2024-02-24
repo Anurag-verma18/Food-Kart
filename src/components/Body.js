@@ -46,7 +46,7 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? (
        <Shimmer /> 
     ) : (
-      <div className="body">
+      <div className="">
         <div className="filter flex justify-between">
           <div className="m-2 p-2 flex items-center">
             <button className="px-2 py-1 bg-orange-300  rounded-lg hover:bg-green-300" 
