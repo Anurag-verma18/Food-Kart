@@ -5,16 +5,31 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
 
-    const [btnNameReact, setBtnNameReact] = useState("Login");
+    const [showBackground, setShowBackground] = useState(false);
+
+
 
     useEffect( () => {
-    }, [btnNameReact]);
+      const handleScroll = () => {
+        if(window.scrollY > 0) {
+          setShowBackground(true);
+        } else {
+          setShowBackground(false);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      }
+    }, []);
 
     const cartItems = useSelector((store) => store.cart.items);
     console.log(cartItems);
 
     return (
-      <div className="flex justify-between bg-transparent shadow-md rounded-sm mb-1 mx-0">
+      <div className={`w-full flex justify-between fixed 
+           ${showBackground ? "bg-white shadow-md" : "bg-transparent"} top-0 z-20 mb-1 mx-0`}>
         <div className="logo-container flex items-center ml-10">
           <img className="w-32" 
              src = {LOGO_URL}
@@ -41,14 +56,6 @@ const Header = () => {
             <li className="px-4 font-bold text-xl">
             <Link to="/cart" >Cart({cartItems.length} items)</Link>
             </li>
-            <button className="px-4"
-               onClick={() => {
-                 btnNameReact === "Login" 
-                   ? setBtnNameReact("Logout") 
-                   : setBtnNameReact("Login");
-               }}
-            >{btnNameReact}
-            </button>
           </ul>
         </div>
       </div>
