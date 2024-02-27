@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { testimonials_data } from "../utils/constants";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const Testimonials = () => {
   const [activeFeedbackIndex, setActiveFeedbackIndex] = useState(0);
@@ -30,8 +32,8 @@ const Testimonials = () => {
           </h1>
         </div>
         <div className="flex items-center px-6">
-          <button className="cursor-pointer" onClick={handlePreviousClick}>
-            P
+          <button className="cursor-pointer text-white text-2xl" onClick={handlePreviousClick}>
+            <MdOutlineKeyboardDoubleArrowLeft />
           </button>
           <div className="px-6">
             <div>
@@ -43,8 +45,8 @@ const Testimonials = () => {
               <p className="text-sm italic">Customer</p>
             </div>
           </div>
-          <button className="cursor-pointer" onClick={handleNextClick}>
-            N
+          <button className="cursor-pointer text-white text-2xl" onClick={handleNextClick}>
+            <MdOutlineKeyboardDoubleArrowRight />
           </button>
         </div>
       </div>
