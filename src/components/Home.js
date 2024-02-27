@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   return (
@@ -87,13 +88,13 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full h-20 relative bg-white"></div>
-      <div>
+      <section>
         <div className="w-full h-screen relative top-0">
           <img
             src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708761860/food-background/n6fuhdruaainrwwyhwri.jpg"
             alt="second background image"
           />
-          <div className="flex absolute top-24 z-20">
+          <div className="flex justify-between absolute top-24 z-20">
             <div className=" w-2/5 h-[70%] ml-10 mr-10 grid grid-cols-3 gap-3">
               <div className="grid gap-2">
                 <div>
@@ -179,11 +180,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="w-1/2"></div>
+            <Testimonials />
           </div>
         </div>
-      </div>
-      <div className="w-full h-20 bg-white"></div>
+      </section>
     </div>
   );
 };
