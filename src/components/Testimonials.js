@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { testimonials_data } from "../utils/constants";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -20,10 +20,19 @@ const Testimonials = () => {
     );
   };
 
+  useEffect(()=>{
+    const timer = setTimeout(() => {
+        handleNextClick();
+    }, 3000);
+    return () => {
+        clearTimeout(timer);
+    }
+  }, [activeFeedbackIndex]);
+
   return (
     <div className="w-1/2 h-[70%] ml-24 mr-12 relative top-96">
       <div className="flex flex-col bg-slate-950 opacity-90 text-white rounded-sm py-6">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-7">
           <h1
             className=" 
                 text-red-600 text-2xl font-medium relative after:bg-yellow-300 after:absolute after:h-[0.5] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out after:origin-center cursor-pointer"
