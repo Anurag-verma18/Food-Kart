@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Testimonials from "./Testimonials";
+import { firstBackgroundImage, foodkartPro, gridImages, heroImages, secondBackgroundImage, } from "../utils/constants";
 
 const Home = () => {
   return (
@@ -24,17 +25,17 @@ const Home = () => {
         <div className="w-1/2 px-8 mx-6 flex flex-col">
           <img
             className="w-[55%] relative left-8"
-            src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762736/food-images/dzlpdcn7c92elelhfx4q.jpg"
+            src={heroImages[0]}
             alt="food delivery"
           />
           <img
             className="w-[55%] relative left-32 -mt-11"
-            src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708796064/food_delivery_uc5mej.jpg"
+            src={heroImages[1]}
             alt="food delivery"
           />
           <img
             className="w-[55%] relative left-56 -mt-11"
-            src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762010/food-images/zbs5cnhoyyogqv0ybox0.jpg"
+            src={heroImages[2]}
             alt="food delivery"
           />
         </div>
@@ -64,14 +65,14 @@ const Home = () => {
       <div>
         <div className="w-full h-screen relative top-0">
           <img
-            src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708761648/food-background/fevjdkgfe00xmqrakg7a.jpg"
+            src={firstBackgroundImage}
             alt="First background image"
           />
           <div className="flex">
             <div className="w-2/5 absolute top-44 left-32 z-20">
               <img
                 className=""
-                src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708844123/foodkart_pro_pjjxrx.jpg"
+                src={foodkartPro}
                 alt="foodkart pro"
               />
             </div>
@@ -91,7 +92,7 @@ const Home = () => {
       <section>
         <div className="w-full h-screen relative top-0">
           <img
-            src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708761860/food-background/n6fuhdruaainrwwyhwri.jpg"
+            src={secondBackgroundImage}
             alt="second background image"
           />
           <div className="flex justify-between absolute top-24 z-20">
@@ -100,26 +101,26 @@ const Home = () => {
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762738/food-images/hmsuvmumun75tt87jzuy.jpg"
+                    src={gridImages[0]}
                     alt="food one"
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762010/food-images/bxeizf5zki2ifmwfgsbc.jpg"
+                    src={gridImages[1]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762018/food-images/csbhv8564irgquv9fgfk.jpg"
+                    src={gridImages[2]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762017/food-images/oqcsqlsghxkx2zixqbir.jpg"
+                    src={gridImages[3]}
                   />
                 </div>
               </div>
@@ -128,26 +129,26 @@ const Home = () => {
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762012/food-images/tyiqrfx2oa736dmcgzt1.jpg"
+                    src={gridImages[4]}
                     alt="food one"
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762011/food-images/cz56a2c7pkwsagwbehhr.jpg"
+                    src={gridImages[5]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762016/food-images/xovii0zmyey82zoeqfft.jpg"
+                    src={gridImages[6]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762009/food-images/kjx0hswsn2wqrt7z35ey.jpg"
+                    src={gridImages[7]}
                   />
                 </div>
               </div>
@@ -156,26 +157,26 @@ const Home = () => {
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762734/food-images/rvdt9groc2yrjeazv7gp.jpg"
+                    src={gridImages[8]}
                     alt="food one"
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762018/food-images/veazgeuvdh88vlfjpjwc.jpg"
+                    src={gridImages[9]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762022/food-images/ptjur2drljn1nz49i1jx.png"
+                    src={gridImages[10]}
                   />
                 </div>
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src="https://res.cloudinary.com/dencbmqyy/image/upload/v1708762012/food-images/cyvgrwpdsxrjkcebrotd.jpg"
+                    src={gridImages[11]}
                   />
                 </div>
               </div>

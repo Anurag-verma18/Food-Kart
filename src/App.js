@@ -4,7 +4,7 @@
   import Header from "./components/Header";
   import Home from "./components/Home";
   import About from "./components/About";
-  import Body from "./components/Body";
+  //import Body from "./components/Body";
   import Contact from "./components/Contact";
   //import Grocery from "./components/Grocery";
   import Error from "./components/Error";
@@ -15,6 +15,7 @@
   import Cart from "./components/Cart";
 
     const Grocery = lazy(() => import("./components/Grocery"));
+    const Body = lazy(() => import("./components/Body"));
     
     const AppLayout = () => {
       return (
@@ -38,7 +39,9 @@
           },
           {
             path: "/restaurants",
-            element: <Body />
+            element: <Suspense>
+                        <Body />
+                     </Suspense>
           },
           {
             path: "/about",
