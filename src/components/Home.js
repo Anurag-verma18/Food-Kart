@@ -77,13 +77,10 @@ const Home = () => {
       </div>
       <div className="w-full h-20 relative bg-white"></div>
       <section>
-        <div className="h-full relative top-0">
-          <img
-            src={secondBackgroundImage}
-            alt="second background image"
-          />
-          <div className="flex flex-col justify-center items-center absolute top-16 z-20">
-            <div className=" w-2/5 h-[70%] ml-10 mr-10 grid grid-cols-3 gap-3">
+        <div className="w-full h-full relative bg-yellow-300">
+         
+          <div className="flex justify-center">
+            <div className=" w-1/2 mx-10 my-20 grid grid-cols-3 gap-3">
               <div className="grid gap-2">
                 <div>
                   <img
@@ -153,7 +150,12 @@ const Home = () => {
                 
               </div>
             </div>
-            <Testimonials />
+            <div className="w-1/2 flex flex-col justify-around my-20 px-10">
+              <h1 className="font-sans font-bold text-4xl text-black">
+                Taste the world, <br /> one tap at a time
+              </h1>
+              <Testimonials />
+            </div>
           </div>
         </div>
       </section>

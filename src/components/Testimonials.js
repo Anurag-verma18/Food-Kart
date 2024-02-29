@@ -30,7 +30,7 @@ const Testimonials = () => {
   }, [activeFeedbackIndex]);
 
   return (
-    <div className="object-cover relative mt-10 px-32">
+    <div className="object-cover">
       <div className="flex flex-col bg-slate-950 opacity-90 text-white rounded-sm py-6">
         <div className="flex justify-center mb-5">
           <h1

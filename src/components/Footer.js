@@ -9,8 +9,8 @@ import { LuCopyright } from "react-icons/lu";
 const Footer = () => {
   return (
     <div className="w-full flex justify-center bg-black text-white text-6xl ">
-      <div className="pt-16 pb-10">
-        <div className="mb-12">
+      <div className="pt-16 pb-8">
+        <div className="mb-8">
           <img className="h-6" src={LOGO_URL} alt="Foodkart logo" />
         </div>
         <div className="w-full flex justify-between">
@@ -112,7 +112,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="mt-10 border-t-[1px] border-t-white mb-6"></hr>
+        <hr className="mt-8 border-t-[1px] border-t-white mb-6"></hr>
         <div className="">
           <div className="flex items-start mb-4 text-slate-300 text-sm">
             <span className="pr-10">Privacy Policy</span>
