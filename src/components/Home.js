@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import Testimonials from "./Testimonials";
-import { firstBackgroundImage, foodkartPro, gridImages, heroImages, secondBackgroundImage, } from "../utils/constants";
+import { foodkartPro, gridImages, heroImage, secondBackgroundImage, } from "../utils/constants";
 
 const Home = () => {
   return (
     <div className="m-0 p-0 bg-rose-50">
-      <div className="w-full h-screen flex pt-28">
-        <div className="w-1/2 pt-10 px-8 mx-6 font-sans">
-          <h1 className="mb-8 text-5xl font-bold">
+      <div className="w-full h-full flex justify-between py-16">
+        <div className="w-1/2 pt-16 pl-8 ml-6 font-sans">
+          <h1 className="w-3/4 mb-8 text-5xl font-bold">
             Delicious dishes, delivered with ease
           </h1>
-          <p className="mb-7 text-lg text-slate-800">
+          <p className="w-3/4 mb-7 text-lg text-slate-800">
             Indulge in a world of culinary delights with our online food
             delivery platform. Explore a diverse array of cuisines, from local
             favorites to global specialties, all conveniently delivered to your
@@ -22,20 +22,10 @@ const Home = () => {
             </button>
           </Link>
         </div>
-        <div className="w-1/2 px-8 mx-6 flex flex-col">
+        <div className="w-1/2 pt-6 pr-8 mr-6 flex justify-center">
           <img
-            className="w-[55%] relative left-8"
-            src={heroImages[0]}
-            alt="food delivery"
-          />
-          <img
-            className="w-[55%] relative left-32 -mt-11"
-            src={heroImages[1]}
-            alt="food delivery"
-          />
-          <img
-            className="w-[55%] relative left-56 -mt-11"
-            src={heroImages[2]}
+            className="w-auto"
+            src={heroImage}
             alt="food delivery"
           />
         </div>
@@ -63,24 +53,21 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className="w-full h-screen relative top-0">
-          <img
-            src={firstBackgroundImage}
-            alt="First background image"
-          />
-          <div className="flex">
-            <div className="w-2/5 absolute top-44 left-32 z-20">
+        <div className="w-full h-full bg-black">
+          
+          <div className="flex justify-between py-16">
+            <div className="w-1/2 px-16 flex items-center justify-center">
               <img
                 className=""
                 src={foodkartPro}
                 alt="foodkart pro"
               />
             </div>
-            <div className="w-[30%] mr-24 absolute top-56 right-28 z-20">
-              <h1 className="font-sans font-bold text-5xl text-white mb-8">
+            <div className="w-1/2 px-16 flex flex-col justify-center">
+              <h1 className="w-3/4 font-sans font-bold text-5xl text-white mb-8">
                 FoodKart Pro is delivery for less
               </h1>
-              <p className="text-md text-white">
+              <p className="w-3/4 text-md text-white">
                 Members get a ₹0 delivery fee on FoodKart Pro orders, 5% back on
                 pickup orders, lower service fess, and so much more.
               </p>
@@ -90,12 +77,12 @@ const Home = () => {
       </div>
       <div className="w-full h-20 relative bg-white"></div>
       <section>
-        <div className="w-full h-screen relative top-0">
+        <div className="h-full relative top-0">
           <img
             src={secondBackgroundImage}
             alt="second background image"
           />
-          <div className="flex justify-between absolute top-24 z-20">
+          <div className="flex flex-col justify-center items-center absolute top-16 z-20">
             <div className=" w-2/5 h-[70%] ml-10 mr-10 grid grid-cols-3 gap-3">
               <div className="grid gap-2">
                 <div>
@@ -117,19 +104,14 @@ const Home = () => {
                     src={gridImages[2]}
                   />
                 </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full"
-                    src={gridImages[3]}
-                  />
-                </div>
+            
               </div>
 
               <div className="grid gap-2">
                 <div>
                   <img
                     className="h-auto max-w-full"
-                    src={gridImages[4]}
+                    src={gridImages[3]}
                     alt="food one"
                   />
                 </div>
@@ -139,12 +121,7 @@ const Home = () => {
                     src={gridImages[5]}
                   />
                 </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full"
-                    src={gridImages[6]}
-                  />
-                </div>
+                
                 <div>
                   <img
                     className="h-auto max-w-full"
@@ -173,18 +150,14 @@ const Home = () => {
                     src={gridImages[10]}
                   />
                 </div>
-                <div>
-                  <img
-                    className="h-auto max-w-full"
-                    src={gridImages[11]}
-                  />
-                </div>
+                
               </div>
             </div>
             <Testimonials />
           </div>
         </div>
       </section>
+      <div className="w-full h-20 relative bg-white"></div>
     </div>
   );
 };

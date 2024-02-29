@@ -7,11 +7,7 @@ export const LOGO_URL =
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 
-export const heroImages = [
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762736/food-images/dzlpdcn7c92elelhfx4q.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708796064/food_delivery_uc5mej.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762010/food-images/zbs5cnhoyyogqv0ybox0.jpg",
-];
+export const heroImage = "https://res.cloudinary.com/dencbmqyy/image/upload/v1709176571/hero_image_mywmp8.png";
 
 export const firstBackgroundImage =
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708761648/food-background/fevjdkgfe00xmqrakg7a.jpg";
