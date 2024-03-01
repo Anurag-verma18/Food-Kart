@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Testimonials from "./Testimonials";
-import { foodkartPro, gridImages, heroImage, secondBackgroundImage, } from "../utils/constants";
+import { foodkartPro, gridImages, heroImage } from "../utils/constants";
 
 const Home = () => {
   return (

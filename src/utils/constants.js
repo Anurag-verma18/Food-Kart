@@ -9,14 +9,8 @@ export const MENU_API =
 
 export const heroImage = "https://res.cloudinary.com/dencbmqyy/image/upload/v1709176571/hero_image_mywmp8.png";
 
-export const firstBackgroundImage =
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708761648/food-background/fevjdkgfe00xmqrakg7a.jpg";
-
 export const foodkartPro =
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708844123/foodkart_pro_pjjxrx.jpg";
-
-export const secondBackgroundImage =
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708761860/food-background/n6fuhdruaainrwwyhwri.jpg";
 
 export const gridImages = [
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762738/food-images/hmsuvmumun75tt87jzuy.jpg",

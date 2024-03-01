@@ -8,7 +8,7 @@ import { LuCopyright } from "react-icons/lu";
 
 const Footer = () => {
   return (
-    <div className="w-full flex justify-center bg-black text-white text-6xl ">
+    <div className="w-full px-10 flex justify-center bg-black text-white text-6xl ">
       <div className="pt-16 pb-8">
         <div className="mb-8">
           <img className="h-6" src={LOGO_URL} alt="Foodkart logo" />
