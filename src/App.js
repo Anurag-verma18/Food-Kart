@@ -21,7 +21,7 @@
     const AppLayout = () => {
       return (
         <Provider store={appStore} >
-            <div className="app">
+            <div className="overflow-hidden">
               <Header />
               <Outlet />
               <Footer />
