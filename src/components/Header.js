@@ -9,7 +9,7 @@ const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
   const [open, setOpen] = useState(false);
 
-  handleMenuClick = () => {
+  const handleMenuClick = () => {
     setOpen(!open);
   };
 
