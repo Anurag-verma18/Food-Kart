@@ -2,27 +2,28 @@ import {CDN_URL} from "../utils/constants";
 
 const RestaurantCard  = (props) => {
     const {resData} = props;
+    console.log(resData);
     const {
       cloudinaryImageId, 
       name, 
       cuisines, 
-      costForTwo,
       avgRating, 
-      sla
+      sla,
+      areaName,
     } = resData?.info;
     return (
-      <div className="m-2 p-2 w-[200px] h-[300px] bg-gray-200 rounded-lg hover:shadow-xl hover:bg-gray-300"  >
+      <div className="m-2 w-60 h-full bg-white rounded-lg font-[Darker Grotesque]"  >
         <img 
-            className="w-full h-2/5 rounded-lg"
+            className="w-full h-40 object-cover shadow-lg rounded-xl mb-2"
             alt="res-logo"
             src={CDN_URL + cloudinaryImageId}
         />
-        <div>
-          <h4 className="font-bold text-base py-2">{name}</h4>
-          <h5 className="text-sm">{cuisines.join(", ")}</h5>
-          <h5 className="text-sm">{costForTwo}</h5>
-          <h5 className="text-sm">{avgRating} stars</h5>
-          <h5 className="text-sm">{sla.deliveryTime} minutes</h5>
+        <div className="ml-2">
+          <h4 className="font-medium text-xs m-0 p-0">{name}</h4>
+          <span className="font-medium text-xs">{avgRating} stars • </span>
+          <span className="font-medium text-xs">{sla.slaString}</span>
+          <h5 className="m-0 p-0 text-xs w-full truncate break-words text-slate-800">{cuisines.join(", ")}</h5>
+          <span className="text-xs text-slate-800">{areaName}</span>
         </div>
       </div>
     )

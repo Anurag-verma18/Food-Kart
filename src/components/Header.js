@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <div className={`w-full md:flex md:justify-between fixed 
-         ${ showBackground ? "bg-white shadow-md" : "bg-transparent"} top-0 z-30 mb-1 mx-0`}
+         ${ showBackground ? "bg-white shadow-lg" : "bg-transparent"} top-0 z-30 mb-1 mx-0`}
     >
       <div className="logo-container flex items-center md:ml-10 ml-5">
         <img className="w-32 my-2 p-2" src={LOGO_URL} alt="applogo" />

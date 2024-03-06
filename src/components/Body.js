@@ -46,7 +46,7 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? (
        <Shimmer /> 
     ) : (
-      <div className="">
+      <div className="py-16 mx-auto max-w-[1030px]">
         <div className="filter flex justify-between">
           <div className="m-2 p-2 flex items-center">
             <button className="px-2 py-1 bg-orange-300  rounded-lg hover:bg-green-300" 
@@ -88,7 +88,7 @@ const Body = () => {
           </div>
         </div>
        
-        <div className="flex flex-wrap justify-center">
+        <div className="grid grid-cols-4 gap-x-6 gap-y-5 mx-3 my-7">
           {
             filteredRestaurants.map((restaurant) => (
               <Link key={restaurant.info.id} to = {"/restaurants/" + restaurant.info.id} >
