@@ -26,10 +26,17 @@ const Body = () => {
   
       const json = await data.json();
       console.log(json);
-      setListOfBanner(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
-      setListOfTopRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setAllRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+      const restaurants = json?.data?.cards?.find((val) => val?.card?.card?.id === "restaurant_grid_listing")?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+      const banners = json?.data?.cards?.find((val) => val?.card?.card?.header?.title === "What's on your mind?")?.card?.card?.gridElements?.infoWithStyle?.info;
+
+      const topChains = json?.data?.cards?.find((val) => val?.card?.card?.header?.title === "Top restaurant chains in Bangalore")?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+      setListOfBanner(banners);
+      setListOfTopRestaurant(topChains);
+      setAllRestaurants(restaurants);
+      setFilteredRestaurants(restaurants);
     }
 
   
@@ -102,7 +109,8 @@ const Body = () => {
               }
               />
               <button 
-                className="flex justify-center items-center px-3 py-1 m-2 shadow-sm shadow-slate-500 text-base text-white bg-orange-400 hover:bg-orange-500 rounded-2xl"
+                className="flex justify-center items-center px-3 py-1 m-2 shadow-sm shadow-slate-500 text-base text-white 
+                bg-orange-400 hover:bg-orange-500 rounded-2xl"
                 onClick={() => {
                   const data = filterData(searchText, allRestaurants);
                   setFilteredRestaurants(data);
