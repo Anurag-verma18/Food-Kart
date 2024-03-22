@@ -4,6 +4,7 @@ import { LOGO_URL } from "../utils/constants";
 import { useSelector } from "react-redux";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import { IoMdCart } from "react-icons/io";
 
 const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
@@ -45,22 +46,29 @@ const Header = () => {
       </div>
       
       <ul
-        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-medium absolute md:static md:z-30 z-[-1] left-0 md:w-auto w-full transition-all duration-700 ease-in ${open ? 'top-12 opacity-100 bg-white' : 'top-[-490px]'} md:opacity-100 opacity-0`}
+        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-medium absolute md:static md:z-30 z-[-1] 
+        left-0 md:w-auto w-full transition-all duration-700 ease-in ${open ? 'top-12 opacity-100 bg-white' : 'top-[-490px]'} 
+        md:opacity-100 opacity-0`}
       >
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base">
+        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
           <Link to="/">Home</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base">
+        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
           <Link to="/restaurants">Restaurants</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base">
+        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
           <Link to="/about">About Us</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base">
+        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
           <Link to="/contact">Contact Us</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base">
-          <Link to="/cart">Cart({cartItems.length} items)</Link>
+        <li className="md:px-4 my-3 md:my-0 text-3xl md:text-base hover:text-orange-400">
+          <Link to="/cart" className="flex items-center justify-between">
+            <span className="cursor-pointer mr-1">
+              <IoMdCart />
+            </span>
+            <span className="text-sm"> • {cartItems.length}</span>
+          </Link>
         </li>
       </ul>
       
