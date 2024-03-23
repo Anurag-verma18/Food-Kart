@@ -67,7 +67,7 @@ const Header = () => {
             <span className="cursor-pointer mr-1">
               <IoMdCart />
             </span>
-            <span className="text-sm"> • {cartItems.length}</span>
+            <span className="text-sm"> • {/*cartItems.length*/}</span>
           </Link>
         </li>
       </ul>

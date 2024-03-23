@@ -75,7 +75,7 @@ const RestaurantMenu = () => {
          </div>
         )}
         <hr className="border-dashed border-b-slate-500 mt-4 mb-4"/>
-        <div className="flex justify-start list-none font-semibold text-[0.7rem] mb-2">
+        <div className="flex justify-start list-none font-semibold text-[0.7rem] mb-4">
             <ul className="flex items-center">
                 <li className="flex mr-4">
                   <span className="mr-1 flex items-center justify-center text-sm"><MdTimelapse /></span>
