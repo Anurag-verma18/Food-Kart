@@ -1,4 +1,5 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
     cartItems: [],
@@ -16,9 +17,31 @@ const cartSlice = createSlice({
             );
             if(itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
+                toast.info("increased item quanity", {
+                    position: "bottom-left",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                })
             } else {
                 const tempItem = {...action.payload, cartQuantity: 1};
                 state.cartItems.push(tempItem);
+                toast.success("added to cart", {
+                    position: "bottom-left",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                })
             }
             
         },
@@ -27,6 +50,17 @@ const cartSlice = createSlice({
                 (cartItem) => cartItem.id !== action.payload.id
             );
             state.cartItems = updatedItems;
+            toast.error("removed from cart", {
+                position: "bottom-left",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            })
         },
         reduceItemQty: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
@@ -34,11 +68,33 @@ const cartSlice = createSlice({
             );
             if(state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1;
+                toast.info("decreased item quanity", {
+                    position: "bottom-left",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                })
             } else {
                 const updatedItemQty = state.cartItems.filter(
                     (cartItem) => cartItem.id !== action.payload.id
                 );
                 state.cartItems = updatedItemQty;
+                toast.error("removed from cart", {
+                    position: "bottom-left",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                })
             }
         },
         clearCart: (state) => {

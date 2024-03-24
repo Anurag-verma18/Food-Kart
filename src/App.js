@@ -14,6 +14,8 @@
   import {Provider} from "react-redux";
   import appStore from "./utils/appStore";
   import Cart from "./components/Cart";
+  import { ToastContainer } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 
     const Grocery = lazy(() => import("./components/Grocery"));
     const Body = lazy(() => import("./components/Body"));
@@ -22,6 +24,7 @@
       return (
         <Provider store={appStore} >
             <div className="overflow-hidden">
+              <ToastContainer />
               <Header />
               <Outlet />
               <Footer />
