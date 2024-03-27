@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
-import { useSelector } from "react-redux";
+import { useDispatch ,useSelector } from "react-redux";
+import { cartTotalPrice } from "../utils/cartSlice";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { IoMdCart } from "react-icons/io";
@@ -10,9 +11,18 @@ const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
   const [open, setOpen] = useState(false);
 
+  const { cartItems, cartTotalQty } = useSelector((store) => store.cart);
+  //console.log(cartItems);
+
+  const dispatch = useDispatch();
+
   const handleMenuClick = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    dispatch(cartTotalPrice());
+}, [cartItems]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +38,6 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
 
   return (
     <div className={`w-full md:flex md:justify-between fixed 
@@ -67,7 +74,7 @@ const Header = () => {
             <span className="cursor-pointer mr-1">
               <IoMdCart />
             </span>
-            <span className="text-sm"> • {/*cartItems.length*/}</span>
+            <span className="text-sm"> • {cartTotalQty}</span>
           </Link>
         </li>
       </ul>

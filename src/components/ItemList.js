@@ -1,4 +1,4 @@
-import {CDN_URL} from "../utils/constants";
+import {CDN_URL, vegFoodLogo, nonVegFoodLogo} from "../utils/constants";
 import {useDispatch} from "react-redux";
 import {addItem} from "../utils/cartSlice";
 import { IoStarSharp } from "react-icons/io5";
@@ -23,11 +23,11 @@ const ItemList = ({items}) => {
                             <div className="flex justify-start items-center">
                               {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                  <img className="w-3 object-contain mb-1 mr-[5px]" 
-                                      src="https://img.icons8.com/small/16/40C057/vegetarian-food-symbol.png" 
+                                      src={vegFoodLogo} 
                                       alt="veg-food-symbol"
                                  /> ) : (
                                   <img className="w-3 object-contain mb-1 mr-[5px]" 
-                                       src="https://img.icons8.com/small/16/FA5252/vegetarian-food-symbol.png" 
+                                       src={nonVegFoodLogo} 
                                        alt="non-veg-food-symbol"/>
                                  )
                               }

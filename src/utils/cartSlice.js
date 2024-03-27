@@ -13,7 +13,7 @@ const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) =>{
             const itemIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
+                (item) => item?.card?.info?.id === action.payload?.card?.info?.id
             );
             if(itemIndex >= 0) {
                 state.cartItems[itemIndex].cartQuantity += 1;
@@ -26,7 +26,6 @@ const cartSlice = createSlice({
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    transition: Bounce,
                 })
             } else {
                 const tempItem = {...action.payload, cartQuantity: 1};
@@ -40,14 +39,13 @@ const cartSlice = createSlice({
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    transition: Bounce,
                 })
             }
             
         },
         removeItem: (state, action) => {
             const updatedItems = state.cartItems.filter(
-                (cartItem) => cartItem.id !== action.payload.id
+                (cartItem) => cartItem?.card?.info?.id !== action.payload?.card?.info?.id
             );
             state.cartItems = updatedItems;
             toast.error("removed from cart", {
@@ -58,13 +56,12 @@ const cartSlice = createSlice({
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
-                transition: Bounce,
+                theme: "light"
             })
         },
         reduceItemQty: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
+                (item) => item?.card?.info?.id === action.payload?.card?.info?.id
             );
             if(state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1;
@@ -77,11 +74,10 @@ const cartSlice = createSlice({
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    transition: Bounce,
                 })
             } else {
                 const updatedItemQty = state.cartItems.filter(
-                    (cartItem) => cartItem.id !== action.payload.id
+                    (cartItem) => cartItem?.card?.info?.id !== action.payload?.card?.info?.id
                 );
                 state.cartItems = updatedItemQty;
                 toast.error("removed from cart", {
@@ -93,7 +89,6 @@ const cartSlice = createSlice({
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    transition: Bounce,
                 })
             }
         },
@@ -103,11 +98,12 @@ const cartSlice = createSlice({
         cartTotalPrice: (state) => {
             const initialValue = {total: 0, quantity: 0};
 
-            let {subTotal, quantity} = state.cartItems.reduce(
+            let {total, quantity} = state.cartItems.reduce(
                 (cartTotal, cartItem) => {
 
-                    const { price, cartQuantity } = cartItem;
-                    const itemTotal = price * cartQuantity;
+                    const { cartQuantity } = cartItem;
+                    const { price } = cartItem?.card?.info;
+                    const itemTotal = (price/100) * cartQuantity;
 
                     cartTotal.total += itemTotal;
                     cartTotal.quantity += cartQuantity;
@@ -116,7 +112,7 @@ const cartSlice = createSlice({
                 }, initialValue
             );
 
-            state.cartTotalAmount = subTotal;
+            state.cartTotalAmount = total;
             state.cartTotalQty = quantity;
         }
     }

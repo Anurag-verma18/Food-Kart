@@ -27,6 +27,12 @@ export const gridImages = [
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762012/food-images/cyvgrwpdsxrjkcebrotd.jpg",
 ];
 
+export const vegFoodLogo = "https://img.icons8.com/small/16/40C057/vegetarian-food-symbol.png";
+
+export const nonVegFoodLogo = "https://img.icons8.com/small/16/FA5252/vegetarian-food-symbol.png";
+
+export const emptyCartImage = "https://res.cloudinary.com/dencbmqyy/image/upload/v1711514001/empty-cart_n2ehbl.webp";
+
 export const testimonials_data = [
   {
     name: "Sarah P.",

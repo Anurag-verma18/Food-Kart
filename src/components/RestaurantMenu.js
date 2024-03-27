@@ -23,6 +23,9 @@ const RestaurantMenu = () => {
     return <Shimmer />;
   }
 
+  const cards = resInfo?.cards?.find(
+    (c) => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.Restaurant")?.card?.card?.info;
+
   const {
     name,
     avgRating,
@@ -32,12 +35,14 @@ const RestaurantMenu = () => {
     sla,
     feeDetails,
     totalRatingsString,
-  } = resInfo?.cards[0]?.card?.card?.info;
+  } = cards;
 
-  
+  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
 
   const categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.cards?.find(
+      (c) => c?.groupedCard
+    )?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
