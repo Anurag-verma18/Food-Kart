@@ -19,7 +19,7 @@ const cartSlice = createSlice({
                 state.cartItems[itemIndex].cartQuantity += 1;
                 toast.info("increased item quanity", {
                     position: "bottom-left",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
                 state.cartItems.push(tempItem);
                 toast.success("added to cart", {
                     position: "bottom-left",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
             state.cartItems = updatedItems;
             toast.error("removed from cart", {
                 position: "bottom-left",
-                autoClose: 3000,
+                autoClose: 1000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -67,7 +67,7 @@ const cartSlice = createSlice({
                 state.cartItems[itemIndex].cartQuantity -= 1;
                 toast.info("decreased item quanity", {
                     position: "bottom-left",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -82,7 +82,7 @@ const cartSlice = createSlice({
                 state.cartItems = updatedItemQty;
                 toast.error("removed from cart", {
                     position: "bottom-left",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -102,8 +102,8 @@ const cartSlice = createSlice({
                 (cartTotal, cartItem) => {
 
                     const { cartQuantity } = cartItem;
-                    const { price } = cartItem?.card?.info;
-                    const itemTotal = (price/100) * cartQuantity;
+                    const { price, defaultPrice } = cartItem?.card?.info;
+                    const itemTotal = (price/100 || defaultPrice / 100) * cartQuantity;
 
                     cartTotal.total += itemTotal;
                     cartTotal.quantity += cartQuantity;
