@@ -13,18 +13,18 @@ export const foodkartPro =
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708844123/foodkart_pro_pjjxrx.jpg";
 
 export const gridImages = [
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762738/food-images/hmsuvmumun75tt87jzuy.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762010/food-images/bxeizf5zki2ifmwfgsbc.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762018/food-images/csbhv8564irgquv9fgfk.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762017/food-images/oqcsqlsghxkx2zixqbir.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762012/food-images/tyiqrfx2oa736dmcgzt1.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762011/food-images/cz56a2c7pkwsagwbehhr.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762016/food-images/xovii0zmyey82zoeqfft.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762009/food-images/kjx0hswsn2wqrt7z35ey.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762734/food-images/rvdt9groc2yrjeazv7gp.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762018/food-images/veazgeuvdh88vlfjpjwc.jpg",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762022/food-images/ptjur2drljn1nz49i1jx.png",
-  "https://res.cloudinary.com/dencbmqyy/image/upload/v1708762012/food-images/cyvgrwpdsxrjkcebrotd.jpg",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528043/food17_yyuqyr.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528168/food3_gzrox8.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528170/food9_xyjv6b.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528177/food15_l0vsvm.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528170/food5_b7bl7g.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528170/food7_vis1ra.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528172/food12_ahvocs.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528167/food1_gr0rzm.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528178/food13_ptlqcg.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528178/food18_rjbqwl.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528183/food-20_qwqrex.webp",
+  "https://res.cloudinary.com/dencbmqyy/image/upload/v1711528171/food6_kplea3.webp",
 ];
 
 export const vegFoodLogo = "https://img.icons8.com/small/16/40C057/vegetarian-food-symbol.png";

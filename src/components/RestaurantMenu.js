@@ -37,7 +37,6 @@ const RestaurantMenu = () => {
     totalRatingsString,
   } = cards;
 
-  //resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
 
   const categories =
     resInfo?.cards?.find(
