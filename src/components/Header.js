@@ -5,7 +5,7 @@ import { useDispatch ,useSelector } from "react-redux";
 import { cartTotalPrice } from "../utils/cartSlice";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
-import { IoMdCart } from "react-icons/io";
+import { BsHandbagFill } from "react-icons/bs";
 
 const Header = () => {
   const [showBackground, setShowBackground] = useState(false);
@@ -70,9 +70,9 @@ const Header = () => {
           <Link to="/contact">Contact Us</Link>
         </li>
         <li className="md:px-4 my-3 md:my-0 text-3xl md:text-base hover:text-orange-400">
-          <Link to="/cart" className="flex items-center justify-between">
-            <span className="cursor-pointer mr-1">
-              <IoMdCart />
+          <Link to="/cart" className="flex justify-between">
+            <span className="cursor-pointer mr-1 flex items-start">
+              <BsHandbagFill />
             </span>
             <span className="text-sm"> • {cartTotalQty}</span>
           </Link>
