@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import Shimmer from "./ShimmerHome";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { IoStarSharp } from "react-icons/io5";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import ShimmerHome from "./ShimmerHome";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import TopRestaurants from "./TopRestaurants";
 import BannerList from "./BannerList";
@@ -85,7 +85,7 @@ const Body = () => {
 
 
     return allRestaurants.length === 0 ? (
-       <Shimmer /> 
+       <ShimmerHome /> 
     ) : (
       <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px]">
         <div className="mt-3 filter flex justify-center">

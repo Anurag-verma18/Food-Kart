@@ -5,9 +5,7 @@
   import Footer from "./components/Footer";
   import Home from "./components/Home";
   import About from "./components/About";
-  //import Body from "./components/Body";
   import Contact from "./components/Contact";
-  //import Grocery from "./components/Grocery";
   import Error from "./components/Error";
   import RestaurantMenu from "./components/RestaurantMenu";
   import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -16,6 +14,7 @@
   import Cart from "./components/Cart";
   import { ToastContainer } from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
+  import ShimmerHome from "./components/ShimmerHome";
 
     const Grocery = lazy(() => import("./components/Grocery"));
     const Body = lazy(() => import("./components/Body"));
@@ -46,7 +45,7 @@
           },
           {
             path: "/restaurants",
-            element: <Suspense fallback={<h1>Loading....</h1>}>
+            element: <Suspense fallback={<ShimmerHome />}>
                         <Body />
                      </Suspense>
           },
