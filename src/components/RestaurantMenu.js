@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./ShimmerHome";
+import ShimmerMenu from "./ShimmerMenu";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { IoStarSharp } from "react-icons/io5";
@@ -20,7 +20,7 @@ const RestaurantMenu = () => {
   };
 
   if (resInfo === null) {
-    return <Shimmer />;
+    return <ShimmerMenu />;
   }
 
   const cards = resInfo?.cards?.find(
@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
     );
 
   return (
-    <div className="m-auto w-6/12 py-12">
+    <div className="m-auto w-6/12 my-16">
       <div className="mx-4">
         <div className="pt-4 mb-4 flex justify-between">
           <div className="mr-4 text-[0.6rem]">
@@ -61,7 +61,7 @@ const RestaurantMenu = () => {
               , {sla?.lastMileTravel} km
             </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-end">
             <div className="p-2 rounded-md border-[1px] border-slate-300">
               <span className="px-0 text-green-600 flex justify-center items-center">
                   <span className="text-xs flex items-center mr-[2px] p-0 m-0"><IoStarSharp /></span>
