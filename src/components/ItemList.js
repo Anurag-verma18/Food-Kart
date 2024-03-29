@@ -16,9 +16,9 @@ const ItemList = ({items}) => {
         <div>
             {items.map((item) => (
                 <div key={item?.card?.info?.id} 
-                    className="p-2 pb-3 m-2 border-b-2 border-gray-200 text-left flex justify-between"
+                    className="p-2 px-4 pb-3 my-2 mx-auto border-b-2 border-gray-200 text-left grid grid-cols-5 sm:gap-x-4 gap-x-0"
                 >
-                    <div className="w-4/5">
+                    <div className="col-start-1 col-end-4">
                         <div className="text-xs mb-2">
                             <div className="flex justify-start items-center">
                               {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
@@ -52,21 +52,22 @@ const ItemList = ({items}) => {
                             {item?.card?.info?.description}
                         </p>
                     </div>
-                    <div className="w-1/5 p-2">
-                        <div className="w-full h-24 relative">
+                    <div className="col-start-5 col-end-6 sm:p-2 pt-2 sm:-translate-x-0 -translate-x-1/4">
+                        <div className="sm:w-24 sm:h-24 w-20 h-20 relative">
                           {item?.card?.info?.imageId && (
                             <img src={CDN_URL + item?.card?.info?.imageId} 
                                className="w-full h-full object-cover rounded-md"
                             />
                           )}
-                          <div className={`absolute right-5 ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10`}>
-                            <button className="py-1 px-5 m-0 rounded-md bg-white shadow-white shadow-md font-medium text-green-600 
-                            text-xs border-slate-300 border-[1px] hover:bg-slate-50"
+                          
+                            <button className={`absolute left-1/2 -translate-x-1/2 ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } 
+                            z-10 py-1 sm:px-5 px-3 m-0 rounded-md bg-white shadow-white shadow-md font-medium text-green-600 
+                            text-xs border-slate-300 border-[1px] hover:bg-slate-50`}
                                     onClick={() => handleAddItem(item)}
                             >
                               ADD
                             </button>
-                         </div>
+                         
                         </div>
                     </div>
                 </div>

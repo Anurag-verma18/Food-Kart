@@ -34,14 +34,14 @@ const Cart = () => {
         dispatch(clearCart());
     }
     return (
-        <div className={`${cartItems.length === 0 ? "mt-36" : "my-16"} m-4 p-4`}>
+        <div className={`${cartItems.length === 0 ? "sm:mt-36 mt-12" : "my-16"} m-4 p-4`}>
             { cartItems.length !== 0 && (
-                <h1 className="text-2xl text-center font-semibold">Cart</h1>
+                <h1 className="md:text-2xl sm:text-xl text-lg text-center font-semibold">Cart</h1>
             )}
-            <div className="w-full h-screen">
+            <div className="w-full md:h-screen h-auto">
                 { cartItems.length === 0 ? (
                     <div className="flex justify-center">
-                        <div className="w-1/2 text-xl flex flex-col justify-center items-center">
+                        <div className="sm:w-1/2 w-4/5 text-xl flex flex-col justify-center items-center">
                             <div className="w-56 my-4 p-2">
                                 <img className="object-contain"
                                      src={emptyCartImage}
@@ -49,18 +49,18 @@ const Cart = () => {
                                 />
                             </div>
                             <h1 className="my-1 text-slate-800 text-sm text-semibold">Your cart is empty</h1>
-                            <p className="text-slate-500 text-[0.8rem]">Add items from a restaurant to start a new cart</p>
+                            <p className="text-slate-500 text-[0.8rem] text-center">Add items from a restaurant to start a new cart</p>
                             <Link to="/restaurants" className="mt-2">
                                 <button className="text-sm text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
                             </Link>
                         </div>
                     </div>
                 ) : (
-                    <div className="flex justify-evenly">
-                       <div className="w-2/3">
+                    <div className="flex md:flex-row md:justify-evenly flex-col items-center">
+                       <div className="md:w-2/3 w-full">
                         {cartItems.map((item) => (
                           <div key={item?.card?.info?.id} 
-                             className="flex justify-between p-2 pb-3 m-2 text-left"
+                             className="flex justify-between p-2 pb-3 m-2 text-left mx-auto"
                           >
                             <div className="w-1/2">
                                 <div className="text-xs mb-2">
@@ -98,15 +98,15 @@ const Cart = () => {
                             </div>
     
                             <div className="w-1/4 flex justify-center items-center">
-                                <div className="p-2 m-2 flex justify-between items-center text-base text-green-500 border-[1px]
-                                border-green-500 leading-3">
-                                  <button className="border-none outline-none bg-none cursor-pointer pr-3"
+                                <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-base text-xs 
+                                text-green-500 border-[1px] border-green-500 leading-3">
+                                  <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1"
                                     onClick={() => handleReduceItemQty(item)}
                                   >
                                     -
                                   </button>
-                                  <div>{item.cartQuantity}</div>
-                                  <button className="border-none outline-none bg-none cursor-pointer pl-3"
+                                  <div className="sm:pr-3 pr-1">{item.cartQuantity}</div>
+                                  <button className="border-none outline-none bg-none cursor-pointer"
                                     onClick={() => handleIncreaseItemQty(item)}  
                                   >
                                     +
@@ -115,26 +115,27 @@ const Cart = () => {
                             </div>
     
                             <div className="w-1/4 p-2">
-                                <div className="w-3/5 h-24 relative">
+                              <div className="sm:w-24 sm:h-24 w-20 h-20 relative">
                                   {item?.card?.info?.imageId && (
                                     <img src={CDN_URL + item?.card?.info?.imageId} 
-                                       className="w-full h-full object-cover rounded-md"
+                                      className="w-full h-full object-cover rounded-md"
                                     />
                                   )}
-                                  <div className={`absolute right-5 ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10`}>
-                                    <button className="py-1 px-3 m-0 rounded-md bg-white shadow-white shadow-md font-medium 
-                                    text-red-600 text-xs border-slate-300 border-[1px] hover:bg-slate-50"
-                                            onClick={() => handleRemoveItem(item)}
-                                    >
-                                      REMOVE
-                                    </button>
-                                 </div>
+                                  
+                                  <button className={`absolute left-1/2 -translate-x-1/2 
+                                    ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10 py-1 sm:px-4 px-2 m-0 rounded-md bg-white 
+                                    shadow-white shadow-md font-medium text-red-600 text-xs border-slate-300 border-[1px] 
+                                    hover:bg-slate-50`}
+                                       onClick={() => handleRemoveItem(item)}
+                                  >
+                                     REMOVE
+                                  </button>
                                 </div>
                             </div>
                           </div>
                          ))}
                        </div>
-                       <div className="w-1/4 flex flex-col justify-start p-4">
+                       <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col justify-start p-4">
                            <div className="flex justify-between m-2">
                               <span className="text-slate-500 font-medium">Subtotal:</span>
                               <span className="text-black font-medium">₹{cartTotalAmount}</span>

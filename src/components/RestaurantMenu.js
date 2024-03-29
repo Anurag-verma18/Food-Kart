@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
     );
 
   return (
-    <div className="m-auto w-6/12 my-16">
+    <div className="my-16 mx-auto max-w-[675px]">
       <div className="mx-4">
         <div className="pt-4 mb-4 flex justify-between">
           <div className="mr-4 text-[0.6rem]">
