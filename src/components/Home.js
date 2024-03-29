@@ -4,7 +4,7 @@ import { foodkartPro, gridImages, heroImage } from "../utils/constants";
 
 const Home = () => {
   return (
-    <div className="max-w-fit overflow-hidden m-0 p-0 bg-rose-50">
+    <div className="max-w-fit overflow-hidden m-0 p-0 bg-rose-50 ">
       <section className="w-full overflow-hidden flex flex-col items-center md:flex md:flex-row justify-between py-16 mx-0">
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pt-8 px-8 mx-6 font-sans">
           <h1 className="w-4/5 mb-4 md:mb-8 text-center md:text-left text-3xl md:text-5xl font-bold">

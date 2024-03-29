@@ -37,7 +37,7 @@ const TopRestaurants = ({listOfTopRestaurants}) => {
             <div className="relative">
               <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
                 <div className="flex justify-start mb-2 pl-3">
-                  <div className="md:text-lg text-base font-semibold tracking-wide">Top restaurant chains in Bangalore</div>
+                  <div className="md:text-2xl text-lg font-bold">Top restaurant chains in Bangalore</div>
                 </div>
                 <div className="absolute top-0 flex gap-2 right-8">
                   <button onClick={() => handleTopRestScroll(-400)} 

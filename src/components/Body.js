@@ -87,12 +87,13 @@ const Body = () => {
     return allRestaurants.length === 0 ? (
        <ShimmerHome /> 
     ) : (
-      <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px]">
+      <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px] font-darkerGrotesque">
         <div className="mt-3 filter flex justify-center">
           <div className="flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
               <input 
                 type="text" 
-                className="h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 px-2 rounded-sm placeholder:text-sm placeholder-gray-500 focus:placeholder-gray-400 text-sm font-normal text-slate-900" 
+                className="h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 px-2 rounded-sm 
+                placeholder:text-sm placeholder-gray-400 focus:placeholder-gray-300 text-sm font-normal text-slate-900" 
                 placeholder="Search for Restaurant and Food"
                 value={searchText}
                 onChange={
@@ -117,7 +118,7 @@ const Body = () => {
                 }}
               >
                 <span className="pr-1 md:text-base text-sm"><FiSearch /></span>
-                  Search
+                <span className="pr-1 md:text-base text-sm">Search</span>
               </button>
           </div>
         </div>
@@ -137,14 +138,15 @@ const Body = () => {
         { allRestaurants.length !==0 && (
           <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
             <div className="flex justify-start mb-2 pl-3">
-              <div className="md:text-lg text-base font-semibold tracking-wide">Restaurants with online food delivery in Bangalore</div>
+              <div className="md:text-2xl text-lg font-bold">Restaurants with online food delivery in Bangalore</div>
             </div>
             <div className="flex justify-start mb-2 pl-3">
-              <button className={`flex justify-center items-center text-xs text-black mr-2 py-1 px-2 rounded-2xl border-[1px] hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
+              <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px] 
+              hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
                 onClick={handleFastDelivery}
               >
                 Fast Delivery
-                <span className={`pl-1 ${fastDlvBtn ? "block text-sm" : "hidden"}`} 
+                <span className={`pl-1 ${fastDlvBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
                   }}
@@ -152,12 +154,12 @@ const Body = () => {
                   <IoClose />
                 </span>
               </button>
-              <button className={`flex justify-center items-center text-xs text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
+              <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
                 hover:border-slate-700 ${topRatingBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
                 onClick={handleTopRating}
               >
                 Ratings 4.0+
-                <span className={`pl-1 ${topRatingBtn ? "block text-sm" : "hidden"}`} 
+                <span className={`pl-1 ${topRatingBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
                   }}
@@ -165,12 +167,12 @@ const Body = () => {
                   <IoClose />
                 </span>
               </button>
-              <button className={`flex justify-center items-center text-xs text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
+              <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
                 hover:border-slate-700 ${offersBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
                 onClick={handleOffers}
               >
                 Offers
-                <span className={`pl-1 ${offersBtn ? "block text-sm" : "hidden"}`} 
+                <span className={`pl-1 ${offersBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
                   }}

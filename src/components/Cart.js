@@ -34,7 +34,7 @@ const Cart = () => {
         dispatch(clearCart());
     }
     return (
-        <div className={`${cartItems.length === 0 ? "sm:mt-36 mt-12" : "my-16"} m-4 p-4`}>
+        <div className={`${cartItems.length === 0 ? "sm:mt-36 mt-12" : "my-16"} m-4 p-4 font-darkerGrotesque`}>
             { cartItems.length !== 0 && (
                 <h1 className="md:text-2xl sm:text-xl text-lg text-center font-semibold">Cart</h1>
             )}
@@ -49,9 +49,9 @@ const Cart = () => {
                                 />
                             </div>
                             <h1 className="my-1 text-slate-800 text-sm text-semibold">Your cart is empty</h1>
-                            <p className="text-slate-500 text-[0.8rem] text-center">Add items from a restaurant to start a new cart</p>
+                            <p className="text-slate-500 text-sm text-center">Add items from a restaurant to start a new cart</p>
                             <Link to="/restaurants" className="mt-2">
-                                <button className="text-sm text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
+                                <button className="text-semibold text-base text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
                             </Link>
                         </div>
                     </div>
@@ -76,12 +76,12 @@ const Cart = () => {
                                          )
                                       }
                                       {item?.card?.info?.ribbon?.text && (
-                                        <div className="flex justify-start items-center text-[0.7rem] text-amber-400 mb-1">
+                                        <div className="flex justify-start items-center text-xs text-amber-400 mb-1">
                                           <span className="mr-[2px] p-0 m-0 flex items-center">
                                             <IoStarSharp />
                                           </span>
                                           <span className="p-0 m-0">{item?.card?.info?.ribbon?.text}</span>
-                                      </div>
+                                       </div>
                                       )}
                                     </div>
                                     <p>{item.card.info.name}</p>
@@ -92,7 +92,7 @@ const Cart = () => {
                                         
                                     </div>
                                 </div>
-                                <p className="text-[0.6rem] text-gray-500 "> 
+                                <p className="text-xs text-gray-400 "> 
                                     {item?.card?.info?.description}
                                 </p>
                             </div>
@@ -124,7 +124,7 @@ const Cart = () => {
                                   
                                   <button className={`absolute left-1/2 -translate-x-1/2 
                                     ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10 py-1 sm:px-4 px-2 m-0 rounded-md bg-white 
-                                    shadow-white shadow-md font-medium text-red-600 text-xs border-slate-300 border-[1px] 
+                                    shadow-white shadow-md font-semibold text-red-600 text-sm border-slate-300 border-[1px] 
                                     hover:bg-slate-50`}
                                        onClick={() => handleRemoveItem(item)}
                                   >
@@ -138,7 +138,10 @@ const Cart = () => {
                        <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col justify-start p-4">
                            <div className="flex justify-between m-2">
                               <span className="text-slate-500 font-medium">Subtotal:</span>
-                              <span className="text-black font-medium">₹{cartTotalAmount}</span>
+                              <span className="text-black font-medium">
+                                <span className="text-sm">₹</span>
+                                {cartTotalAmount}
+                              </span>
                            </div>
                            <button className="w-full flex justify-center items-center text-white bg-green-500 hover:bg-white
                             hover:text-green-500 border-green-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm">

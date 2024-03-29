@@ -33,7 +33,7 @@ const BannerList = ({listOfBanner}) => {
             <div className="relative">
               <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
                 <div className="flex justify-start mb-3 pl-3">
-                  <div className="md:text-lg text-base font-semibold tracking-wide">What's on your mind?</div>
+                  <div className="md:text-2xl text-lg font-bold">What's on your mind?</div>
                 </div>
                 <div className="absolute top-0 flex gap-2 right-8">
                   <button onClick={() => handleBannerScroll(-400)} 

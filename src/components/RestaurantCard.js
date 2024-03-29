@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
         />
         <div className="absolute inset-x-0 bottom-0 rounded-xl h-2/5 bg-gradient-to-t from-black"></div>
         { aggregatedDiscountInfoV3?.header && ( 
-            <div className="absolute inset-x-0 bottom-0 w-full p-2 truncate break-words text-base text-white font-extrabold">
+            <div className="absolute inset-x-0 bottom-0 w-full p-2 truncate break-words text-lg text-white font-extrabold">
               <div>
                 {`${aggregatedDiscountInfoV3?.header} ${aggregatedDiscountInfoV3.subHeader}`}
               </div>
@@ -23,18 +23,18 @@ const RestaurantCard = (props) => {
         )}
       </div>
       <div className="ml-2">
-        <h4 className="font-medium text-xs m-0 p-0">{name}</h4>
+        <h4 className="font-semibold text-sm m-0 p-0">{name}</h4>
         <div className="flex justify-start items-center pb-1">
           <span className="text-md text-green-600 pr-1 p-0 m-0">
             <IoStarSharp />
           </span>
-          <span className="font-medium text-xs pr-1">{avgRating} •</span>
-          <span className="font-medium text-xs">{sla.slaString}</span>
+          <span className="font-semibold text-sm pr-1">{avgRating} •</span>
+          <span className="font-semibold text-sm">{sla.slaString}</span>
         </div>
-        <p className="m-0 p-0 text-xs w-full truncate break-words text-slate-600">
+        <p className="m-0 p-0 font-light text-sm w-full truncate break-words text-slate-500">
           {cuisines.join(", ")}
         </p>
-        <p className="p-0 m-0 text-xs text-slate-600">{areaName}</p>
+        <p className="p-0 m-0 font-light text-sm text-slate-500">{areaName}</p>
       </div>
     </div>
   );

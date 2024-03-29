@@ -19,7 +19,7 @@ const ItemList = ({items}) => {
                     className="p-2 px-4 pb-3 my-2 mx-auto border-b-2 border-gray-200 text-left grid grid-cols-5 sm:gap-x-4 gap-x-0"
                 >
                     <div className="col-start-1 col-end-4">
-                        <div className="text-xs mb-2">
+                        <div className="text-sm mb-2">
                             <div className="flex justify-start items-center">
                               {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
                                  <img className="w-3 object-contain mb-1 mr-[5px]" 
@@ -32,7 +32,7 @@ const ItemList = ({items}) => {
                                  )
                               }
                               {item?.card?.info?.ribbon?.text && (
-                                <div className="flex justify-start items-center text-[0.7rem] text-amber-400 mb-1">
+                                <div className="flex justify-start items-center text-xs text-amber-400 mb-1">
                                   <span className="mr-[2px] p-0 m-0 flex items-center">
                                     <IoStarSharp />
                                   </span>
@@ -42,13 +42,13 @@ const ItemList = ({items}) => {
                             </div>
                             <p>{item.card.info.name}</p>
                             <div className="flex justify-start items-center">
-                                <span className="text-[0.7rem] mr-1"> 
+                                <span className="text-xs mr-1"> 
                                     ₹ {item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100}
                                 </span>
                                 
                             </div>
                         </div>
-                        <p className="text-[0.6rem] text-gray-500 "> 
+                        <p className="text-xs text-gray-400 "> 
                             {item?.card?.info?.description}
                         </p>
                     </div>
@@ -61,8 +61,8 @@ const ItemList = ({items}) => {
                           )}
                           
                             <button className={`absolute left-1/2 -translate-x-1/2 ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } 
-                            z-10 py-1 sm:px-5 px-3 m-0 rounded-md bg-white shadow-white shadow-md font-medium text-green-600 
-                            text-xs border-slate-300 border-[1px] hover:bg-slate-50`}
+                            z-10 py-1 sm:px-5 px-3 m-0 rounded-md bg-white shadow-white shadow-md font-semibold text-green-600 
+                            text-sm border-slate-300 border-[1px] hover:bg-slate-50`}
                                     onClick={() => handleAddItem(item)}
                             >
                               ADD

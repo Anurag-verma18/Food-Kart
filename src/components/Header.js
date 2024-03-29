@@ -53,22 +53,22 @@ const Header = () => {
       </div>
       
       <ul
-        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-medium absolute md:static md:z-30 z-[-1] 
+        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-medium font-darkerGrotesque absolute md:static md:z-30 z-[-1] 
         left-0 md:w-auto w-full transition-all duration-700 ease-in ${open ? 'top-12 opacity-100 bg-white' : 'top-[-490px]'} 
         md:opacity-100 opacity-0`}
       >
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
+        <li className="md:px-4 my-3 md:my-0 text-2xl md:text-xl hover:text-orange-400">
           <Link to="/">Home</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
+        <li className="md:px-4 my-3 md:my-0 text-2xl md:text-xl hover:text-orange-400">
           <Link to="/restaurants">Restaurants</Link>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
+        <li className="md:px-4 my-3 md:my-0 text-xl md:text-lg hover:text-orange-400">
           <Link to="/cart" className="md:flex md:justify-between">
-            <span className="cursor-pointer mr-1 inline-flex items-start">
+            <span className="cursor-pointer mr-1 inline-flex items-center">
               <BsHandbagFill />
             </span>
-            <span className="md:text-sm"> • {cartTotalQty}</span>
+            <span className="md:text-lg"> • {cartTotalQty}</span>
           </Link>
         </li>
       </ul>
