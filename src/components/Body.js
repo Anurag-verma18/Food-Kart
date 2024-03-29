@@ -89,7 +89,7 @@ const Body = () => {
     ) : (
       <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px]">
         <div className="mt-3 filter flex justify-center">
-          <div className="flex justify-center items-center m-2 p-2">
+          <div className="flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
               <input 
                 type="text" 
                 className="h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 px-2 rounded-sm placeholder:text-sm placeholder-gray-500 focus:placeholder-gray-400 text-sm font-normal text-slate-900" 
@@ -109,15 +109,15 @@ const Body = () => {
               }
               />
               <button 
-                className="flex justify-center items-center px-3 py-1 m-2 shadow-sm shadow-slate-500 text-base text-white 
-                bg-orange-400 hover:bg-orange-500 rounded-2xl"
+                className="flex justify-center items-center md:px-3 px-2 py-1 m-2 shadow-sm shadow-slate-500 md:text-base text-sm
+                text-white bg-orange-400 hover:bg-orange-500 rounded-2xl"
                 onClick={() => {
                   const data = filterData(searchText, allRestaurants);
                   setFilteredRestaurants(data);
                 }}
               >
-                <span className="pr-1 text-base"><FiSearch /></span>
-                Search
+                <span className="pr-1 md:text-base text-sm"><FiSearch /></span>
+                  Search
               </button>
           </div>
         </div>
@@ -135,9 +135,9 @@ const Body = () => {
         <div><hr className="mt-6 border-t-[1px] border-t-slate-300 mb-5 mx-3 px-6"/></div>
         
         { allRestaurants.length !==0 && (
-          <div className="mx-3 p-3">
+          <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
             <div className="flex justify-start mb-2 pl-3">
-              <div className="text-lg font-semibold tracking-wide">Restaurants with online food delivery in Bangalore</div>
+              <div className="md:text-lg text-base font-semibold tracking-wide">Restaurants with online food delivery in Bangalore</div>
             </div>
             <div className="flex justify-start mb-2 pl-3">
               <button className={`flex justify-center items-center text-xs text-black mr-2 py-1 px-2 rounded-2xl border-[1px] hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
@@ -179,10 +179,13 @@ const Body = () => {
                 </span>
               </button>
             </div>
-            <div className="grid grid-cols-4 gap-x-6 gap-y-5 mb-5">
+            <div className="grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-5 lg:mb-5 md:grid-cols-3 md:gap-x-4 md:gap-y-4 md:mb-4
+            sm:grid-cols-2 sm:gap-x-3 sm:gap-y-3 sm:mb-3 grid-cols-1 gap-y-2 mb-2">
             {
               filteredRestaurants.map((restaurant) => (
-                <Link key={restaurant?.info?.id} to = {"/restaurants/" + restaurant?.info?.id} >
+                <Link key={restaurant?.info?.id} to = {"/restaurants/" + restaurant?.info?.id} 
+                    className="lg:flex-none lg:justify-normal flex justify-center"
+                >
                   <RestaurantCard resData = {restaurant}/>
                 </Link>
               ))

@@ -31,9 +31,9 @@ const BannerList = ({listOfBanner}) => {
     return (
         <div className="w-full mx-auto">
             <div className="relative">
-              <div className="mx-3 p-3">
+              <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
                 <div className="flex justify-start mb-3 pl-3">
-                  <div className="text-lg font-semibold tracking-wide">What's on your mind?</div>
+                  <div className="md:text-lg text-base font-semibold tracking-wide">What's on your mind?</div>
                 </div>
                 <div className="absolute top-0 flex gap-2 right-8">
                   <button onClick={() => handleBannerScroll(-400)} 
@@ -52,7 +52,7 @@ const BannerList = ({listOfBanner}) => {
                 <div className="flex overflow-x-auto scroll-smooth no-scrollbar" ref={bannerRef}>
                   <div className="flex items-center" >
                     {listOfBanner?.map((banner) => (
-                      <div className="pr-5 w-36 hover:scale-95 transition ease-in-out rounded-lg" 
+                      <div className="md:pr-5 md:w-36 sm:pr-4 sm:w-28 pr-2 w-20 hover:scale-95 transition ease-in-out rounded-lg" 
                            key={banner?.id}>
                         <img className="w-full cursor-pointer"
                              src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/${banner?.imageId}`}
