@@ -64,17 +64,11 @@ const Header = () => {
           <Link to="/restaurants">Restaurants</Link>
         </li>
         <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
-          <Link to="/about">About Us</Link>
-        </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-base hover:text-orange-400">
-          <Link to="/contact">Contact Us</Link>
-        </li>
-        <li className="md:px-4 my-3 md:my-0 text-3xl md:text-base hover:text-orange-400">
-          <Link to="/cart" className="flex justify-between">
-            <span className="cursor-pointer mr-1 flex items-start">
+          <Link to="/cart" className="md:flex md:justify-between">
+            <span className="cursor-pointer mr-1 inline-flex items-start">
               <BsHandbagFill />
             </span>
-            <span className="text-sm"> • {cartTotalQty}</span>
+            <span className="md:text-sm"> • {cartTotalQty}</span>
           </Link>
         </li>
       </ul>
