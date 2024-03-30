@@ -92,8 +92,9 @@ const Body = () => {
           <div className="flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
               <input 
                 type="text" 
-                className="h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 px-2 rounded-sm 
-                placeholder:text-sm placeholder-gray-400 focus:placeholder-gray-300 text-sm font-normal text-slate-900" 
+                className="w-full h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 pl-2 pr-3 rounded-sm 
+                placeholder:text-xs placeholder:overflow-visible placeholder-gray-400 focus:placeholder-gray-300 text-sm font-normal 
+                text-slate-900" 
                 placeholder="Search for Restaurant and Food"
                 value={searchText}
                 onChange={
@@ -137,10 +138,10 @@ const Body = () => {
         
         { allRestaurants.length !==0 && (
           <div className="lg:mx-3 lg:p-3 sm:mx-2 sm:p-2 mx-1 p-1">
-            <div className="flex justify-start mb-2 pl-3">
+            <div className="flex sm:justify-start justify-center mb-2 pl-3">
               <div className="md:text-2xl text-lg font-bold">Restaurants with online food delivery in Bangalore</div>
             </div>
-            <div className="flex justify-start mb-2 pl-3">
+            <div className="flex sm:justify-start justify-center mb-2 pl-3">
               <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px] 
               hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
                 onClick={handleFastDelivery}

@@ -4,20 +4,20 @@ import { foodkartPro, gridImages, heroImage } from "../utils/constants";
 
 const Home = () => {
   return (
-    <div className="max-w-fit overflow-hidden m-0 p-0 bg-rose-50 ">
+    <div className="max-w-fit overflow-hidden m-0 p-0 bg-rose-50 font-darkerGrotesque">
       <section className="w-full overflow-hidden flex flex-col items-center md:flex md:flex-row justify-between py-16 mx-0">
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pt-8 px-8 mx-6 font-sans">
-          <h1 className="w-4/5 mb-4 md:mb-8 text-center md:text-left text-3xl md:text-5xl font-bold">
+        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start pt-8 px-8 mx-6">
+          <h1 className="w-4/5 mb-4 md:mb-8 text-center md:text-left text-4xl md:text-6xl font-bold">
             Delicious dishes, delivered with ease
           </h1>
-          <p className="w-4/5 md:w-3/4 mb-4 md:mb-7 text-lg text-slate-800">
+          <p className="w-4/5 md:w-3/4 mb-4 md:mb-7 text-xl text-slate-800">
             Indulge in a world of culinary delights with our online food
             delivery platform. Explore a diverse array of cuisines, from local
             favorites to global specialties, all conveniently delivered to your
             doorstep with just a few taps.
           </p>
           <Link to="/restaurants">
-            <button className="bg-orange-500 hover:bg-orange-400 py-2 px-3 rounded-md">
+            <button className="text-xl bg-orange-500 hover:bg-orange-400 py-2 px-3 rounded-md">
               Explore Food
             </button>
           </Link>
@@ -38,7 +38,7 @@ const Home = () => {
             alt="scanner"
           />
           <div className="p-0 m-0 h-20 flex flex-col justify-center">
-            <h1 className="font-sans text-center text-base md:text-xl font-semibold">
+            <h1 className="font-darkerGrotesque text-center lg:text-xl text-lg font-semibold">
               Get the full FoodKart experience
             </h1>
             <p className="text-sm font-serif">
@@ -64,11 +64,11 @@ const Home = () => {
               />
             </div>
             <div className="w-full md:w-1/2 md:px-16 flex flex-col justify-center items-center">
-              <h1 className="w-3/4 font-sans font-bold text-2xl md:text-5xl text-center md:text-left text-white mb-4 md:mb-8 pl-2 md:pl-0">
+              <h1 className="w-3/4 font-bold text-3xl md:text-6xl text-center md:text-left text-white mb-4 md:mb-8 pl-2 md:pl-0">
                 FoodKart Pro is <br />delivery for less
               </h1>
-              <p className="w-4/5 md:w-3/4 pl-2 md:pl-0 text-base text-white">
-                Members get a ₹0 delivery fee on FoodKart Pro orders, 5% back on
+              <p className="w-4/5 md:w-3/4 pl-2 md:pl-0 text-xl text-white">
+                Members get a <span className="text-base">₹</span>0 delivery fee on FoodKart Pro orders, 5% back on
                 pickup orders, lower service fess, and so much more.
               </p>
             </div>
@@ -79,8 +79,8 @@ const Home = () => {
       <section>
         <div className="w-full h-full relative bg-yellow-300">
          
-          <div className="flex flex-col md:flex md:flex-row justify-center items-center">
-            <div className="w-full md:w-1/2 px-4 md:px-0 mx-5 md:mx-10 my-5 md:my-20 grid grid-cols-3 gap-3">
+          <div className="flex flex-col lg:flex lg:flex-row justify-center items-center">
+            <div className="w-full lg:w-1/2 px-4 lg:px-0 mx-5 lg:mx-10 mb-5 mt-10 lg:my-20 grid grid-cols-3 gap-3">
               <div className="grid gap-2">
                 <div>
                   <img
@@ -150,8 +150,8 @@ const Home = () => {
                 
               </div>
             </div>
-            <div className="w-full md:w-1/2 h-full flex flex-col justify-between md:justify-around mb-5 md:mb-20 md:mt-20 px-5 md:px-10">
-              <h1 className="font-sans font-bold text-center text-3xl md:text-4xl text-black mb-5 md:mb-10">
+            <div className="w-full lg:w-1/2 h-full flex flex-col justify-between lg:justify-around mb-5 lg:mb-20 lg:mt-20 px-5 lg:px-10">
+              <h1 className="font-bold text-center text-4xl md:text-5xl text-black mb-5 lg:mb-10">
                 Taste the world, <br /> one tap at a time
               </h1>
               <Testimonials />

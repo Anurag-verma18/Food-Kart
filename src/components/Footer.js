@@ -8,7 +8,7 @@ import { LuCopyright } from "react-icons/lu";
 
 const Footer = () => {
   return (
-    <div className="w-full px-5 md:px-10 md:flex md:justify-center bg-black text-white text-6xl ">
+    <div className="w-full px-5 md:px-10 md:flex md:justify-center bg-black text-white font-darkerGrotesque">
       <div className="pt-8 md:pt-16 pb-8">
         <div className="mb-8">
           <img className="h-6" src={LOGO_URL} alt="Foodkart logo" />
@@ -20,22 +20,22 @@ const Footer = () => {
                 About Us
               </h6>
               <nav>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Who We Are
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Blog
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Work With Us
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Contact Us
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Investor Relations
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Careers
                 </p>
               </nav>
@@ -45,54 +45,54 @@ const Footer = () => {
                 Resources
               </h6>
               <nav>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Get Help
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Buy Gift Cards
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Create A Business Account
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Save On Your First Order
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Get FoodKart Pro
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Promotions
                 </p>
               </nav>
             </div>
           </div>
           <div className="w-full md:w-1/2 flex justify-between">
-            <div name="Join Us" className="w-1/2 pr-5 md:pl-10 md:pr-10">
+            <div name="Join Us" className="w-1/2 pr-5 md:pl-6 md:pr-6">
               <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
                 Join Us
               </h6>
               <nav>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Partner With Us
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Add Your Restaurant
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Sign Up To Deliver
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   For Corporate Accounts
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   Become An Affiliate
                 </p>
-                <p className="mb-2 text-sm hover:text-slate-400 text-slate-300 cursor-pointer">
+                <p className="mb-2 text-base hover:text-slate-400 text-slate-300 cursor-pointer">
                   For Campuses & Hotels
                 </p>
               </nav>
             </div>
-            <div name="Social Links" className="w-1/2 px-5 md:px-10">
+            <div name="Social Links" className="w-1/2 pl-4 md:pl-6">
               <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
                 Social Links
               </h6>
@@ -118,13 +118,13 @@ const Footer = () => {
         </div>
         <hr className="mt-8 border-t-[1px] border-t-white mb-6"></hr>
         <div className="">
-          <div className="flex items-start mb-4 text-slate-300 text-sm">
+          <div className="flex items-start mb-4 text-slate-300 text-base">
             <span className="pr-10">Privacy Policy</span>
             <span className="pr-10">Terms</span>
             <span>Pricing</span>
           </div>
         </div>
-        <div className="text-slate-300 text-sm tracking-wider">
+        <div className="text-slate-300 text-base tracking-wider">
           <span>
             <LuCopyright className="inline-block text-base" />
           </span>
