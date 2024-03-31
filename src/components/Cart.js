@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import {useSelector} from "react-redux";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { removeItem, clearCart, reduceItemQty, addItem, cartTotalPrice } from "../utils/cartSlice";
 import {CDN_URL, vegFoodLogo, nonVegFoodLogo} from "../utils/constants";
 import { IoStarSharp } from "react-icons/io5";
@@ -10,7 +9,7 @@ import { emptyCartImage } from "../utils/constants";
 
 const Cart = () => {
 
-    const { cartItems, cartTotalAmount } = useSelector((store) => store.cart);
+    const { cartItems, cartTotalAmount, restaurantInfo } = useSelector((store) => store.cart);
 
     const dispatch = useDispatch();
 
@@ -36,7 +35,7 @@ const Cart = () => {
     return (
         <div className={`${cartItems.length === 0 ? "sm:mt-36 mt-12" : "my-16"} m-4 p-4 font-darkerGrotesque`}>
             { cartItems.length !== 0 && (
-                <h1 className="md:text-2xl sm:text-xl text-lg text-center font-semibold">Cart</h1>
+                <h1 className="md:text-2xl sm:text-xl text-lg text-center font-extrabold">Cart</h1>
             )}
             <div className="w-full md:h-screen h-auto">
                 { cartItems.length === 0 ? (
@@ -48,112 +47,131 @@ const Cart = () => {
                                      alt="empty cart"
                                 />
                             </div>
-                            <h1 className="my-1 text-slate-800 text-sm text-semibold">Your cart is empty</h1>
-                            <p className="text-slate-500 text-sm text-center">Add items from a restaurant to start a new cart</p>
+                            <h1 className="my-1 text-slate-800 text-sm font-semibold">Your cart is empty</h1>
+                            <p className="text-slate-500 text-sm text-center font-semibold">Add items from a restaurant to start a new cart</p>
                             <Link to="/restaurants" className="mt-2">
-                                <button className="text-semibold text-base text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
+                                <button className="font-bold text-base text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
                             </Link>
                         </div>
                     </div>
                 ) : (
-                    <div className="flex md:flex-row md:justify-evenly flex-col items-center">
-                       <div className="md:w-2/3 w-full">
-                        {cartItems.map((item) => (
-                          <div key={item?.card?.info?.id} 
-                             className="flex justify-between p-2 pb-3 m-2 text-left mx-auto"
-                          >
-                            <div className="w-1/2">
-                                <div className="text-xs mb-2">
-                                    <div className="flex justify-start items-center">
-                                      {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
-                                         <img className="w-3 object-contain mb-1 mr-[5px]" 
-                                              src={vegFoodLogo} 
-                                              alt="veg-food-symbol"
-                                         /> ) : (
-                                          <img className="w-3 object-contain mb-1 mr-[5px]" 
-                                               src={nonVegFoodLogo} 
-                                               alt="non-veg-food-symbol"/>
-                                         )
-                                      }
-                                      {item?.card?.info?.ribbon?.text && (
-                                        <div className="flex justify-start items-center text-xs text-amber-400 mb-1">
-                                          <span className="mr-[2px] p-0 m-0 flex items-center">
-                                            <IoStarSharp />
-                                          </span>
-                                          <span className="p-0 m-0">{item?.card?.info?.ribbon?.text}</span>
-                                       </div>
-                                      )}
-                                    </div>
-                                    <p>{item.card.info.name}</p>
-                                    <div className="flex justify-start items-center">
-                                        <span className="text-xs font-medium mr-1"> 
-                                            ₹ {(item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100) * item.cartQuantity}
-                                        </span>
-                                        
-                                    </div>
-                                </div>
-                                <p className="text-xs text-gray-400 "> 
-                                    {item?.card?.info?.description}
-                                </p>
-                            </div>
-    
-                            <div className="w-1/4 flex justify-center items-center">
-                                <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-base text-xs 
-                                text-green-500 border-[1px] border-green-500 leading-3">
-                                  <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1"
-                                    onClick={() => handleReduceItemQty(item)}
-                                  >
-                                    -
-                                  </button>
-                                  <div className="sm:pr-3 pr-1">{item.cartQuantity}</div>
-                                  <button className="border-none outline-none bg-none cursor-pointer"
-                                    onClick={() => handleIncreaseItemQty(item)}  
-                                  >
-                                    +
-                                  </button>
-                                </div>
-                            </div>
-    
-                            <div className="w-1/4 p-2">
-                              <div className="sm:w-24 sm:h-24 w-20 h-20 relative">
-                                  {item?.card?.info?.imageId && (
-                                    <img src={CDN_URL + item?.card?.info?.imageId} 
-                                      className="w-full h-full object-cover rounded-md"
-                                    />
-                                  )}
-                                  
-                                  <button className={`absolute left-1/2 -translate-x-1/2 
-                                    ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10 py-1 sm:px-4 px-2 m-0 rounded-md bg-white 
-                                    shadow-white shadow-md font-semibold text-red-600 text-sm border-slate-300 border-[1px] 
-                                    hover:bg-slate-50`}
-                                       onClick={() => handleRemoveItem(item)}
-                                  >
-                                     REMOVE
-                                  </button>
-                                </div>
+                      <>
+                        <div className="my-3 flex justify-center font-darkerGrotesque">
+                          <div className="w-1/3 sm:flex-row sm:justify-center sm:items-start flex flex-col items-center">
+                            <div className="sm:max-md:w-24 sm:max-md:h-24 w-28 h-28 flex justify-center">
+                                {restaurantInfo?.cloudinaryImageId && (
+                                  <img src={CDN_URL + restaurantInfo?.cloudinaryImageId} 
+                                     className="w-full h-full object-cover"
+                                  />
+                                )}
+                            </div> 
+                            <div className="flex flex-col sm:justify-start justify-between sm:items-start items-center 
+                            sm:pl-4 pt-4 sm:pt-0">
+                              <h1 className="font-bold md:text-2xl sm:text-xl text-lg ">{restaurantInfo?.name}</h1>
+                              <p className="font-medium md:text-lg sm:text-base text-sm ">{restaurantInfo?.areaName}</p>
                             </div>
                           </div>
-                         ))}
                        </div>
-                       <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col justify-start p-4">
-                           <div className="flex justify-between m-2">
-                              <span className="text-slate-500 font-medium">Subtotal:</span>
-                              <span className="text-black font-medium">
-                                <span className="text-sm">₹</span>
-                                {cartTotalAmount}
-                              </span>
+                        <div className="flex md:flex-row md:justify-evenly flex-col items-center">
+                           <div className="md:w-2/3 w-full">
+                            {cartItems.map((item) => (
+                              <div key={item?.card?.info?.id} 
+                                 className="flex justify-between p-2 pb-3 m-2 text-left mx-auto"
+                              >
+                                <div className="w-1/2">
+                                    <div className="text-xs mb-2">
+                                        <div className="flex justify-start items-center">
+                                          {item?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? (
+                                             <img className="w-3 object-contain mb-1 mr-[5px]" 
+                                                  src={vegFoodLogo} 
+                                                  alt="veg-food-symbol"
+                                             /> ) : (
+                                              <img className="w-3 object-contain mb-1 mr-[5px]" 
+                                                   src={nonVegFoodLogo} 
+                                                   alt="non-veg-food-symbol"/>
+                                             )
+                                          }
+                                          {item?.card?.info?.ribbon?.text && (
+                                            <div className="flex justify-start items-center text-xs font-normal tracking-wide text-red-500 mb-1">
+                                              <span className="mr-[2px] p-0 m-0 flex items-center">
+                                                <IoStarSharp />
+                                              </span>
+                                              <span className="p-0 m-0">{item?.card?.info?.ribbon?.text}</span>
+                                           </div>
+                                          )}
+                                        </div>
+                                        <p className="font-bold text-sm">{item.card.info.name}</p>
+                                        <div className="flex justify-start items-center">
+                                            <span className="text-sm font-medium mr-1"> 
+                                              <span className="text-xs">₹</span> 
+                                              {(item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100) * item.cartQuantity}
+                                            </span>
+                                            
+                                        </div>
+                                    </div>
+                                    <p className="text-xs text-slate-900 "> 
+                                        {item?.card?.info?.description}
+                                    </p>
+                                </div>
+        
+                                <div className="w-1/4 flex justify-center items-center">
+                                    <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-base text-xs 
+                                    text-green-500 border-[1px] border-green-500 leading-3">
+                                      <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1 text-2xl leading-3"
+                                        onClick={() => handleReduceItemQty(item)}
+                                      >
+                                        -
+                                      </button>
+                                      <div className="sm:pr-3 pr-1">{item.cartQuantity}</div>
+                                      <button className="border-none outline-none bg-none cursor-pointer text-2xl leading-3"
+                                        onClick={() => handleIncreaseItemQty(item)}  
+                                      >
+                                        +
+                                      </button>
+                                    </div>
+                                </div>
+        
+                                <div className="w-1/4 p-2">
+                                  <div className="sm:w-24 sm:h-24 w-20 h-20 relative">
+                                      {item?.card?.info?.imageId && (
+                                        <img src={CDN_URL + item?.card?.info?.imageId} 
+                                          className="w-full h-full object-cover rounded-md"
+                                        />
+                                      )}
+                                      
+                                      <button className={`absolute left-1/2 -translate-x-1/2 
+                                        ${item?.card?.info?.imageId ? "-bottom-3" : "top-8" } z-10 py-1 sm:px-4 px-2 m-0 rounded-md bg-white 
+                                        shadow-white shadow-md font-bold text-red-600 text-sm border-slate-300 border-[1px] 
+                                        hover:bg-slate-50`}
+                                           onClick={() => handleRemoveItem(item)}
+                                      >
+                                         REMOVE
+                                      </button>
+                                    </div>
+                                </div>
+                              </div>
+                             ))}
                            </div>
-                           <button className="w-full flex justify-center items-center text-white bg-green-500 hover:bg-white
-                            hover:text-green-500 border-green-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm">
-                              Place Order
-                           </button>
-                           <button className="w-full flex justify-center items-center text-white bg-red-500 hover:bg-white
-                            hover:text-red-500 border-red-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm"
-                              onClick={handleClearCart}>
-                              Clear Cart
-                           </button>
-                       </div>
-                    </div>
+                           <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col justify-start p-4 font-bold">
+                               <div className="flex justify-between m-2">
+                                  <span className="text-slate-500">Subtotal:</span>
+                                  <span className="text-black">
+                                    <span className="text-sm font-semibold">₹</span>
+                                    {cartTotalAmount}
+                                  </span>
+                               </div>
+                               <button className="w-full flex justify-center items-center text-white bg-green-500 hover:bg-white
+                                hover:text-green-500 border-green-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm">
+                                  Place Order
+                               </button>
+                               <button className="w-full flex justify-center items-center text-white bg-red-500 hover:bg-white
+                                hover:text-red-500 border-red-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm"
+                                  onClick={handleClearCart}>
+                                  Clear Cart
+                               </button>
+                           </div>
+                        </div>
+                      </>
                     )}
             </div>
         </div>

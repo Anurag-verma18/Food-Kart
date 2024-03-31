@@ -54,7 +54,7 @@ const TopRestaurants = ({listOfTopRestaurants}) => {
                   </button>
                 </div>
                 <div className="top-rest-list flex overflow-x-scroll scroll-smooth no-scrollbar" ref={restRef}>
-                  <div className="flex">
+                  <div className="flex items-center">
                     {
                       listOfTopRestaurants.map((restaurant) => (
                         <Link key={restaurant?.info?.id} to = {"/restaurants/" + restaurant?.info?.id} >

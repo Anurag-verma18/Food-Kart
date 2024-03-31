@@ -2,7 +2,7 @@ import ItemList from "./ItemList";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
-const RestaurantCategory = ({data, showItems, onClick}) => {
+const RestaurantCategory = ({data, showItems, onClick, restaurantData}) => {
     
     return (
         <div className="">
@@ -11,7 +11,7 @@ const RestaurantCategory = ({data, showItems, onClick}) => {
                <div className="flex justify-between cursor-pointer"
                     onClick={onClick} 
                >
-                   <span className="font-medium text-base">
+                   <span className="font-bold text-base">
                         {data.title} ({data.itemCards.length})
                    </span>
                    {showItems ? (
@@ -21,7 +21,7 @@ const RestaurantCategory = ({data, showItems, onClick}) => {
                      )}
                </div>
             </div>
-            {showItems && <ItemList items={data.itemCards} />}
+            {showItems && <ItemList items={data.itemCards} restaurantData={restaurantData}/>}
         </div>
     );
 };

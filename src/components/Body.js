@@ -89,13 +89,13 @@ const Body = () => {
     ) : (
       <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px] font-darkerGrotesque">
         <div className="mt-3 filter flex justify-center">
-          <div className="flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
+          <div className="w-1/3  flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
               <input 
                 type="text" 
-                className="w-full h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none py-1 pl-2 pr-3 rounded-sm 
-                placeholder:text-xs placeholder:overflow-visible placeholder-gray-400 focus:placeholder-gray-300 text-sm font-normal 
+                className="w-full h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none pt-1 px-3 rounded-sm 
+                placeholder:text-sm placeholder-slate-600 placeholder:tracking-wider focus:placeholder-slate-400 text-sm font-normal 
                 text-slate-900" 
-                placeholder="Search for Restaurant and Food"
+                placeholder="Search for Restaurant or Food..."
                 value={searchText}
                 onChange={
                   (e) => setSearchText(e.target.value)
@@ -112,14 +112,14 @@ const Body = () => {
               />
               <button 
                 className="flex justify-center items-center md:px-3 px-2 py-1 m-2 shadow-sm shadow-slate-500 md:text-base text-sm
-                text-white bg-orange-400 hover:bg-orange-500 rounded-2xl"
+                text-white font-semibold bg-orange-400 hover:bg-orange-500 rounded-2xl"
                 onClick={() => {
                   const data = filterData(searchText, allRestaurants);
                   setFilteredRestaurants(data);
                 }}
               >
-                <span className="pr-1 md:text-base text-sm"><FiSearch /></span>
-                <span className="pr-1 md:text-base text-sm">Search</span>
+                <span className="pr-1 text-sm"><FiSearch /></span>
+                <span className="pr-1 md:text-lg text-base">Search</span>
               </button>
           </div>
         </div>

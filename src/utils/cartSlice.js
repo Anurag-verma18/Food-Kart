@@ -2,16 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 const initialState = {
-    cartItems: [],
-    cartTotalQty: 0,
-    cartTotalAmount: 0,
+    cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
+    cartTotalQty: localStorage.getItem("cartTotalQty") ? JSON.parse(localStorage.getItem("cartTotalQty")) : 0,
+    cartTotalAmount: localStorage.getItem("cartTotalAmount") ? JSON.parse(localStorage.getItem("cartTotalAmount")) : 0,
+    restaurantInfo: localStorage.getItem("restaurantInfo") ? JSON.parse(localStorage.getItem("restaurantInfo")) : {},
 }
 
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItem: (state, action) =>{
+        addRestaurant: (state, action) => {
+            state.restaurantInfo = action.payload;
+            localStorage.setItem("restaurantInfo", JSON.stringify(state.restaurantInfo));
+        },
+        addItem: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
                 (item) => item?.card?.info?.id === action.payload?.card?.info?.id
             );
@@ -41,7 +46,7 @@ const cartSlice = createSlice({
                     theme: "light",
                 })
             }
-            
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         },
         removeItem: (state, action) => {
             const updatedItems = state.cartItems.filter(
@@ -58,6 +63,11 @@ const cartSlice = createSlice({
                 progress: undefined,
                 theme: "light"
             })
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+            if(state.cartItems.length ===0 ){
+                state.restaurantInfo = {};
+                localStorage.clear();
+            }
         },
         reduceItemQty: (state, action) => {
             const itemIndex = state.cartItems.findIndex(
@@ -91,9 +101,13 @@ const cartSlice = createSlice({
                     theme: "light",
                 })
             }
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         },
         clearCart: (state) => {
             state.cartItems.length = 0;
+            state.restaurantInfo = {};
+            localStorage.clear();
+            
         },
         cartTotalPrice: (state) => {
             const initialValue = {total: 0, quantity: 0};
@@ -113,10 +127,12 @@ const cartSlice = createSlice({
             );
 
             state.cartTotalAmount = total;
+            localStorage.setItem("cartTotalAmount", JSON.stringify(state.cartTotalAmount));
             state.cartTotalQty = quantity;
+            localStorage.setItem("cartTotalQty", JSON.stringify(state.cartTotalQty));
         }
     }
 });
 
-export const {addItem, removeItem, reduceItemQty, clearCart, cartTotalPrice} = cartSlice.actions;
+export const { addRestaurant, addItem, removeItem, reduceItemQty, clearCart, cartTotalPrice } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="w-full flex flex-col md:flex md:flex-row justify-between">
           <div className="w-full md:w-1/2 flex justify-between pb-10 md:pb-0">
             <div name="About Us" className="w-1/2 pr-5 md:pr-0">
-              <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
+              <h6 className="text-lg tracking-widest uppercase font-semibold mb-4">
                 About Us
               </h6>
               <nav>
@@ -41,7 +41,7 @@ const Footer = () => {
               </nav>
             </div>
             <div name="Resources" className="w-1/2 pr-5 md:pr-10 pl-5 md:pl-6">
-              <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
+              <h6 className="text-lg tracking-widest uppercase font-semibold mb-4">
                 Resources
               </h6>
               <nav>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
           <div className="w-full md:w-1/2 flex justify-between">
             <div name="Join Us" className="w-1/2 pr-5 md:pl-6 md:pr-6">
-              <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
+              <h6 className="text-lg tracking-widest uppercase font-semibold mb-4">
                 Join Us
               </h6>
               <nav>
@@ -93,7 +93,7 @@ const Footer = () => {
               </nav>
             </div>
             <div name="Social Links" className="w-1/2 pl-4 md:pl-6">
-              <h6 className="text-lg tracking-widest uppercase font-normal mb-4">
+              <h6 className="text-lg tracking-widest uppercase font-semibold mb-4">
                 Social Links
               </h6>
               <div className="flex justify-start">
