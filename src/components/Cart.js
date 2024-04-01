@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import { removeItem, clearCart, reduceItemQty, addItem, cartTotalPrice } from "../utils/cartSlice";
 import {CDN_URL, vegFoodLogo, nonVegFoodLogo} from "../utils/constants";
 import { IoStarSharp } from "react-icons/io5";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { emptyCartImage } from "../utils/constants";
 
@@ -37,7 +39,7 @@ const Cart = () => {
             { cartItems.length !== 0 && (
                 <h1 className="md:text-2xl sm:text-xl text-lg text-center font-extrabold">Cart</h1>
             )}
-            <div className="w-full md:h-screen h-auto">
+            <div className="w-full md:h-full h-auto">
                 { cartItems.length === 0 ? (
                     <div className="flex justify-center">
                         <div className="sm:w-1/2 w-4/5 text-xl flex flex-col justify-center items-center">
@@ -57,7 +59,7 @@ const Cart = () => {
                 ) : (
                       <>
                         <div className="my-3 flex justify-center font-darkerGrotesque">
-                          <div className="w-1/3 sm:flex-row sm:justify-center sm:items-start flex flex-col items-center">
+                          <div className="lg:w-2/5 sm:max-md:w-1/2 sm:flex-row sm:justify-center sm:items-start flex flex-col items-center">
                             <div className="sm:max-md:w-24 sm:max-md:h-24 w-28 h-28 flex justify-center">
                                 {restaurantInfo?.cloudinaryImageId && (
                                   <img src={CDN_URL + restaurantInfo?.cloudinaryImageId} 
@@ -72,7 +74,7 @@ const Cart = () => {
                             </div>
                           </div>
                        </div>
-                        <div className="flex md:flex-row md:justify-evenly flex-col items-center">
+                        <div className="flex md:flex-row md:justify-evenly flex-col md:items-start items-center">
                            <div className="md:w-2/3 w-full">
                             {cartItems.map((item) => (
                               <div key={item?.card?.info?.id} 
@@ -92,7 +94,7 @@ const Cart = () => {
                                              )
                                           }
                                           {item?.card?.info?.ribbon?.text && (
-                                            <div className="flex justify-start items-center text-xs font-normal tracking-wide text-red-500 mb-1">
+                                            <div className="flex justify-start items-center text-xs font-semibold tracking-wide text-red-500 mb-1">
                                               <span className="mr-[2px] p-0 m-0 flex items-center">
                                                 <IoStarSharp />
                                               </span>
@@ -109,24 +111,24 @@ const Cart = () => {
                                             
                                         </div>
                                     </div>
-                                    <p className="text-xs text-slate-900 "> 
+                                    <p className="text-sm sm:inline hidden text-slate-900 "> 
                                         {item?.card?.info?.description}
                                     </p>
                                 </div>
         
                                 <div className="w-1/4 flex justify-center items-center">
-                                    <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-base text-xs 
-                                    text-green-500 border-[1px] border-green-500 leading-3">
-                                      <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1 text-2xl leading-3"
+                                    <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-sm text-xs 
+                                    text-green-500 border-[1px] border-green-500 ">
+                                      <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1"
                                         onClick={() => handleReduceItemQty(item)}
                                       >
-                                        -
+                                        <AiOutlineMinus />
                                       </button>
-                                      <div className="sm:pr-3 pr-1">{item.cartQuantity}</div>
-                                      <button className="border-none outline-none bg-none cursor-pointer text-2xl leading-3"
+                                      <span className="sm:pr-3 pr-1 md:text-lg text-base">{item.cartQuantity}</span>
+                                      <button className="border-none outline-none bg-none cursor-pointer"
                                         onClick={() => handleIncreaseItemQty(item)}  
                                       >
-                                        +
+                                        <AiOutlinePlus />
                                       </button>
                                     </div>
                                 </div>
@@ -152,7 +154,7 @@ const Cart = () => {
                               </div>
                              ))}
                            </div>
-                           <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col justify-start p-4 font-bold">
+                           <div className="md:w-1/4 sm:w-1/2 w-full flex flex-col p-4 font-bold">
                                <div className="flex justify-between m-2">
                                   <span className="text-slate-500">Subtotal:</span>
                                   <span className="text-black">

@@ -44,6 +44,20 @@ const RestaurantMenu = () => {
     areaName: areaName,
   };
 
+  const extractFirstPortion = (str, startString, endString) => {
+    const regex = new RegExp(`${startString}(.*?)${endString}`);
+    const match = str.match(regex);
+    return match ? match[1] : '';
+  };
+
+  const extractSecondPortion = (str, symbol) => {
+    const parts = str.split(symbol);
+    return parts.length > 1 ? parts[1] : '';
+  };
+  
+  const inputString = feeDetails?.message ? feeDetails?.message : "";
+  const firstPortion = extractFirstPortion(inputString, '<b>', '</b>');
+  const secondPortion = extractSecondPortion(inputString, '</b>')
 
   const categories =
     resInfo?.cards?.find(
@@ -60,11 +74,11 @@ const RestaurantMenu = () => {
         <div className="pt-4 mb-4 flex justify-between">
           <div className="mr-4 text-xs">
             <h1 className="font-bold mt-5 text-xl">{name}</h1>
-            <p className="font-normal text-slate-900">
+            <p className="font-bold underline decoration-orange-500 underline-offset-2 text-orange-500">
               {cuisines.join(", ")}
             </p>
-            <span className="font-normal text-slate-900">{areaName}</span>
-            <span className="font-normal text-slate-900">
+            <span className="font-normal text-slate-900 tracking-wide">{areaName}</span>
+            <span className="font-normal text-slate-900 tracking-wide">
               , {sla?.lastMileTravel} km
             </span>
           </div>
@@ -82,7 +96,8 @@ const RestaurantMenu = () => {
         {feeDetails?.message && ( 
          <div className="text-slate-900 text-xs flex">
             <span className="mr-2 flex items-center justify-center"><MdDirectionsBike /></span>
-            <span className="leading-3">{feeDetails?.message}</span>
+            <span className="leading-3 mr-1 ">{firstPortion}</span>
+            <span className="leading-3">{secondPortion} </span>
          </div>
         )}
         <hr className="border-dashed border-b-slate-500 mt-4 mb-4"/>

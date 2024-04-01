@@ -14,10 +14,13 @@ const RestaurantCard = (props) => {
           src={CDN_URL + cloudinaryImageId}
         />
         <div className="absolute inset-x-0 bottom-0 rounded-xl h-2/5 bg-gradient-to-t from-black"></div>
-        { (aggregatedDiscountInfoV3?.header && aggregatedDiscountInfoV3.subHeader) && ( 
+        { aggregatedDiscountInfoV3?.header && ( 
             <div className="absolute inset-x-0 bottom-0 w-full p-2 truncate break-words text-lg text-white font-black">
               <div>
-                {`${aggregatedDiscountInfoV3?.header} ${aggregatedDiscountInfoV3.subHeader} `}
+                <span>{aggregatedDiscountInfoV3?.header} </span>
+                { aggregatedDiscountInfoV3?.subHeader && (
+                    <span>{aggregatedDiscountInfoV3?.subHeader}</span>
+                )}
               </div>
             </div>
         )}

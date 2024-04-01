@@ -53,7 +53,7 @@ const Header = () => {
       </div>
       
       <ul
-        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-medium font-darkerGrotesque absolute md:static md:z-30 z-[-1] 
+        className={`md:flex md:items-center pl-7 md:p-2 md:m-2 md:font-semibold font-darkerGrotesque absolute md:static md:z-30 z-[-1] 
         left-0 md:w-auto w-full transition-all duration-700 ease-in ${open ? 'top-12 opacity-100 bg-white' : 'top-[-490px]'} 
         md:opacity-100 opacity-0`}
       >

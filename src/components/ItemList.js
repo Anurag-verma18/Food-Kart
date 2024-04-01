@@ -42,7 +42,7 @@ const ItemList = ({items, restaurantData}) => {
                                      )
                                   }
                                   {item?.card?.info?.ribbon?.text && (
-                                    <div className="flex justify-start items-center text-xs text-amber-400 mb-1">
+                                    <div className="flex justify-start items-center text-xs font-semibold tracking-wide text-red-500 mb-1">
                                       <span className="mr-[2px] p-0 m-0 flex items-center">
                                         <IoStarSharp />
                                       </span>
@@ -59,7 +59,7 @@ const ItemList = ({items, restaurantData}) => {
                                     
                                 </div>
                             </div>
-                            <p className="text-xs text-slate-900 "> 
+                            <p className="text-sm sm:inline hidden text-slate-900 "> 
                                 {item?.card?.info?.description}
                             </p>
                         </div>
@@ -89,12 +89,12 @@ const ItemList = ({items, restaurantData}) => {
              p-4 flex flex-col shadow-lg shadow-slate-500 ${showPopup ? 'bottom-8 opacity-100 bg-white' : 'bottom-[-300px]'}
               z-10 `}>
               <h3 className="font-darkerGrotesque text-sm font-semibold">Items already in cart</h3>
-              <p className="text-slate-900 font-darkerGrotesque font-normal text-xs py-1 tracking-wide">
+              <p className="text-slate-900 font-darkerGrotesque font-normal text-sm py-1 tracking-wide">
                 Your cart contains items from other restaurant. Would you
                 like to reset your cart for adding items from this
                 restaurant?
               </p>
-              <div className="flex justify-between sm:justify-center font-darkerGrotesque font-medium text-sm sm:gap-0 gap-3 mt-3">
+              <div className="flex justify-evenly font-darkerGrotesque font-medium text-sm sm:gap-0 gap-3 mt-2">
                 <button className="w-2/5 px-1 py-1 bg-white border-[1px] border-green-600 text-green-600"
                       onClick={() => setShowPopup(false)} 
                 >

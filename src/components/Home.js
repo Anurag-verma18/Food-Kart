@@ -10,7 +10,7 @@ const Home = () => {
           <h1 className="w-4/5 mb-4 md:mb-8 text-center md:text-left text-4xl md:text-6xl font-bold">
             Delicious dishes, delivered with ease
           </h1>
-          <p className="w-4/5 md:w-3/4 mb-4 md:mb-7 text-xl text-slate-800">
+          <p className="w-4/5 md:w-3/4 mb-4 md:mb-7 text-xl text-slate-800 font-semibold">
             Indulge in a world of culinary delights with our online food
             delivery platform. Explore a diverse array of cuisines, from local
             favorites to global specialties, all conveniently delivered to your
@@ -67,8 +67,8 @@ const Home = () => {
               <h1 className="w-3/4 font-bold text-3xl md:text-6xl text-center md:text-left text-white mb-4 md:mb-8 pl-2 md:pl-0">
                 FoodKart Pro is <br />delivery for less
               </h1>
-              <p className="w-4/5 md:w-3/4 pl-2 md:pl-0 text-xl text-white">
-                Members get a <span className="text-base">₹</span>0 delivery fee on FoodKart Pro orders, 5% back on
+              <p className="w-4/5 md:w-3/4 pl-2 md:pl-0 text-xl text-white font-semibold">
+                Members get a <span className="text-sm">₹</span>0 delivery fee on FoodKart Pro orders, 5% back on
                 pickup orders, lower service fess, and so much more.
               </p>
             </div>

@@ -48,11 +48,11 @@ const Testimonials = () => {
             <MdOutlineKeyboardDoubleArrowLeft />
           </button>
           <div className="px-6">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center font-medium">
               <p className="md:text-base text-sm text-center leading-3 lg:leading-4 mb-2 h-24 flex items-center justify-center">
                 {testimonials_data[activeFeedbackIndex].feedback}
               </p>
-              <p className="text-sm italic text-red-600">
+              <p className="text-sm italic text-yellow-400 tracking-wide">
                 {" - "}
                 {testimonials_data[activeFeedbackIndex].name}
               </p>
