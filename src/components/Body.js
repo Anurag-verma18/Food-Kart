@@ -143,10 +143,10 @@ const Body = () => {
             </div>
             <div className="flex sm:justify-start justify-center mb-2 pl-3">
               <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px] 
-              hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
+              hover:border-slate-700 ${fastDlvBtn ? "border-slate-800 bg-slate-100" : "border-slate-400 bg-white"}`}
                 onClick={handleFastDelivery}
               >
-                Fast Delivery
+                <span className="font-medium">Fast Delivery</span>
                 <span className={`pl-1 ${fastDlvBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
@@ -156,10 +156,10 @@ const Body = () => {
                 </span>
               </button>
               <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
-                hover:border-slate-700 ${topRatingBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
+                hover:border-slate-700 ${topRatingBtn ? "border-slate-800 bg-slate-100" : "border-slate-400 bg-white"}`}
                 onClick={handleTopRating}
               >
-                Ratings 4.0+
+                <span className="font-medium">Ratings 4.0+</span>
                 <span className={`pl-1 ${topRatingBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
@@ -169,10 +169,10 @@ const Body = () => {
                 </span>
               </button>
               <button className={`flex justify-center items-center text-sm text-black mr-2 py-1 px-2 rounded-2xl border-[1px]
-                hover:border-slate-700 ${offersBtn ? "border-slate-800 bg-slate-200" : "border-slate-300 bg-white"}`}
+                hover:border-slate-700 ${offersBtn ? "border-slate-800 bg-slate-100" : "border-slate-400 bg-white"}`}
                 onClick={handleOffers}
               >
-                Offers
+                <span className="font-medium">Offers</span>
                 <span className={`pl-1 ${offersBtn ? "block text-base" : "hidden"}`} 
                   onClick={() => {
                     window.location.reload();
