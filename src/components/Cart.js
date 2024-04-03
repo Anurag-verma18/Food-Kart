@@ -117,15 +117,15 @@ const Cart = () => {
                                 </div>
         
                                 <div className="w-1/4 flex justify-center items-center">
-                                    <div className="py-1 px-2 sm:m-2 m-1 flex justify-between items-center md:text-sm text-xs 
-                                    text-green-500 border-[1px] border-green-500 ">
-                                      <button className="border-none outline-none bg-none cursor-pointer sm:pr-3 pr-1"
+                                    <div className="sm:m-2 m-1 flex justify-between items-center md:text-sm text-xs 
+                                    text-green-600 border-[1px] border-green-500 rounded-sm">
+                                      <button className="py-2 px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
                                         onClick={() => handleReduceItemQty(item)}
                                       >
                                         <AiOutlineMinus />
                                       </button>
-                                      <span className="sm:pr-3 pr-1 md:text-lg text-base">{item.cartQuantity}</span>
-                                      <button className="border-none outline-none bg-none cursor-pointer"
+                                      <span className=" px-2 font-sans md:text-lg text-base leading-3 text-green-500">{item.cartQuantity}</span>
+                                      <button className="py-2 px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
                                         onClick={() => handleIncreaseItemQty(item)}  
                                       >
                                         <AiOutlinePlus />

@@ -112,7 +112,7 @@ const Body = () => {
               />
               <button 
                 className="flex justify-center items-center md:px-3 px-2 py-1 m-2 shadow-sm shadow-slate-500 md:text-base text-sm
-                text-white font-semibold bg-orange-400 hover:bg-orange-500 rounded-2xl"
+                text-white font-semibold bg-orange-400 hover:bg-orange-500 rounded-3xl"
                 onClick={() => {
                   const data = filterData(searchText, allRestaurants);
                   setFilteredRestaurants(data);
