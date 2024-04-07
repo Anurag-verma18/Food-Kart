@@ -85,7 +85,7 @@ const ItemList = ({items, restaurantData}) => {
                 ))}
             </div>
               
-            <div className={`max-w-[380px] h-36 fixed bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-linear
+            <div className={`md:max-w-[380px] sm:w-3/5 w-4/5 sm:h-36 h-auto fixed bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-linear
              p-4 flex flex-col shadow-lg shadow-slate-500 ${showPopup ? 'bottom-8 opacity-100 bg-white' : 'bottom-[-300px]'}
               z-10 `}>
               <h3 className="font-darkerGrotesque text-sm font-semibold">Items already in cart</h3>
@@ -94,13 +94,13 @@ const ItemList = ({items, restaurantData}) => {
                 like to reset your cart for adding items from this
                 restaurant?
               </p>
-              <div className="flex justify-evenly font-darkerGrotesque font-medium text-sm sm:gap-0 gap-3 mt-2">
-                <button className="w-2/5 px-1 py-1 bg-white border-[1px] border-green-600 text-green-600"
+              <div className="flex justify-evenly font-darkerGrotesque font-medium text-sm sm:gap-0 gap-3 mt-2 leading-3">
+                <button className="w-2/5 px-1 sm:py-2 py-3 bg-white border-[1px] border-green-600 text-green-600"
                       onClick={() => setShowPopup(false)} 
                 >
                   NO
                 </button>
-                <button className="w-2/5 px-1 py-2 bg-green-600 text-white"
+                <button className="w-2/5 px-1 sm:py-2 py-3 bg-green-600 text-white"
                     onClick={() => {
                       dispatch(clearCart());
                       setShowPopup(false);

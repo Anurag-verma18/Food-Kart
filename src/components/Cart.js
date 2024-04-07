@@ -7,6 +7,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { emptyCartImage } from "../utils/constants";
+import { toast } from "react-toastify";
 
 
 const Cart = () => {
@@ -29,6 +30,20 @@ const Cart = () => {
 
     const handleIncreaseItemQty = (item) => {
         dispatch(addItem(item));
+    }
+
+    const handlePlaceOrder = () => {
+      dispatch(clearCart());
+      toast.success("Order Placed", {
+        position: "bottom-left",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
     }
 
     const handleClearCart = () => {
@@ -111,7 +126,7 @@ const Cart = () => {
                                             
                                         </div>
                                     </div>
-                                    <p className="text-sm sm:inline hidden text-slate-900 "> 
+                                    <p className="text-sm md:inline hidden text-slate-900 "> 
                                         {item?.card?.info?.description}
                                     </p>
                                 </div>
@@ -163,7 +178,9 @@ const Cart = () => {
                                   </span>
                                </div>
                                <button className="w-full flex justify-center items-center text-white bg-green-500 hover:bg-white
-                                hover:text-green-500 border-green-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm">
+                                hover:text-green-500 border-green-500 border-[1px] p-1 m-2 cursor-pointer rounded-sm"
+                                  onClick={handlePlaceOrder}
+                               >
                                   Place Order
                                </button>
                                <button className="w-full flex justify-center items-center text-white bg-red-500 hover:bg-white

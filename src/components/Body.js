@@ -89,7 +89,7 @@ const Body = () => {
     ) : (
       <section className="flex flex-col justify-normal py-8 mx-auto max-w-[1110px] font-darkerGrotesque">
         <div className="mt-3 filter flex justify-center">
-          <div className="w-1/3  flex justify-center items-center md:m-2 md:p-2 m-1 p-1">
+          <div className="lg:w-1/3 sm:w-1/2 w-3/4  flex sm:flex-row flex-col justify-center items-center md:m-2 md:p-2 m-1 p-1">
               <input 
                 type="text" 
                 className="w-full h-8 border-b-[1px] border-b-solid border-b-slate-800 focus:outline-none pt-1 px-3 rounded-sm 
