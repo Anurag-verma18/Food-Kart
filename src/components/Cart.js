@@ -8,6 +8,7 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { emptyCartImage } from "../utils/constants";
 import { toast } from "react-toastify";
+import ScrollToTop from "./ScrollToTop";
 
 
 const Cart = () => {
@@ -193,6 +194,7 @@ const Cart = () => {
                       </>
                     )}
             </div>
+            <ScrollToTop />
         </div>
     );
 };

@@ -7,6 +7,7 @@ import BannerList from "./BannerList";
 import RestaurantCard from "./RestaurantCard";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import ScrollToTop from "./ScrollToTop";
 
 
 const Body = () => {
@@ -205,6 +206,7 @@ const Body = () => {
             }
           </div>
         )}
+        <ScrollToTop />
       </section>
     )
   };

@@ -7,6 +7,7 @@ import { IoStarSharp } from "react-icons/io5";
 import { MdDirectionsBike } from "react-icons/md";
 import { MdTimelapse } from "react-icons/md";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
+import ScrollToTop from "./ScrollToTop";
 
 
 const RestaurantMenu = () => {
@@ -125,6 +126,7 @@ const RestaurantMenu = () => {
           />
         ))}
       </div>
+      <ScrollToTop />
     </div>
   );
 };
