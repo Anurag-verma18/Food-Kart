@@ -106,6 +106,7 @@ const Body = () => {
                       const data = filterData(searchText, allRestaurants);
                       setFilteredRestaurants(data);
                       e.preventDefault();
+                      setSearchText("");
                    }
                 }
               }
@@ -116,6 +117,7 @@ const Body = () => {
                 onClick={() => {
                   const data = filterData(searchText, allRestaurants);
                   setFilteredRestaurants(data);
+                  setSearchText("");
                 }}
               >
                 <span className="pr-1 text-sm"><FiSearch /></span>
@@ -182,18 +184,25 @@ const Body = () => {
                 </span>
               </button>
             </div>
-            <div className="grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-5 lg:mb-5 md:grid-cols-3 md:gap-x-4 md:gap-y-4 md:mb-4
-            sm:grid-cols-2 sm:gap-x-3 sm:gap-y-3 sm:mb-3 grid-cols-1 gap-y-2 mb-2">
-            {
-              filteredRestaurants.map((restaurant) => (
-                <Link key={restaurant?.info?.id} to = {"/restaurants/" + restaurant?.info?.id} 
-                    className="lg:flex-none lg:justify-normal flex justify-center"
-                >
-                  <RestaurantCard resData = {restaurant}/>
-                </Link>
-              ))
+            { filteredRestaurants.length !== 0 ? (
+                <div className="grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-5 lg:mb-5 md:grid-cols-3 md:gap-x-4 md:gap-y-4 md:mb-4
+                sm:grid-cols-2 sm:gap-x-3 sm:gap-y-3 sm:mb-3 grid-cols-1 gap-y-2 mb-2">
+                {
+                  filteredRestaurants.map((restaurant) => (
+                    <Link key={restaurant?.info?.id} to = {"/restaurants/" + restaurant?.info?.id} 
+                        className="lg:flex-none lg:justify-normal flex justify-center"
+                    >
+                      <RestaurantCard resData = {restaurant}/>
+                    </Link>
+                  ))
+                }
+                </div>
+              ) : (
+                <div className="text-xl font-medium flex justify-center items-center">
+                  No matching restaurants
+                </div>
+              )
             }
-            </div>
           </div>
         )}
       </section>
