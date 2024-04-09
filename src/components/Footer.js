@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="mb-8">
           <img className="h-6" src={LOGO_URL} alt="Foodkart logo" />
         </div>
-        <div className="w-full flex flex-col md:flex md:flex-row justify-between">
+        <div className="w-full flex flex-col md:flex md:flex-row justify-between leading-3">
           <div className="w-full md:w-1/2 flex justify-between pb-10 md:pb-0">
             <div name="About Us" className="w-1/2 pr-5 md:pr-0">
               <h6 className="text-lg tracking-widest uppercase font-semibold mb-4">
