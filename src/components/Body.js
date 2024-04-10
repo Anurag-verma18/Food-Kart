@@ -8,6 +8,7 @@ import RestaurantCard from "./RestaurantCard";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import ScrollToTop from "./ScrollToTop";
+import { REST_API } from "../utils/constants";
 
 
 const Body = () => {
@@ -22,11 +23,9 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     const fetchData = async() => {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const data = await fetch(REST_API);
   
       const json = await data.json();
-      console.log(json);
 
       const restaurants = json?.data?.cards?.find((val) => val?.card?.card?.id === "restaurant_grid_listing")?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
