@@ -5,6 +5,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
+    "postbuild": "cp _redirects dist/",
     "test": "jest"
   },
   "repository": {
