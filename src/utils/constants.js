@@ -4,9 +4,9 @@ export const CDN_URL =
 export const LOGO_URL =
   "https://res.cloudinary.com/dencbmqyy/image/upload/v1708760628/FoodKart_logo_ce8xbw.png";
 
-export const REST_API = "https://foodkart-24.onrender.com/api/restaurants?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
+export const REST_API = "https://food-kart-server.vercel.app/api/restaurants?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 
-export const MENU_API = "https://foodkart-24.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
+export const MENU_API = "https://food-kart-server.vercel.app/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
 
 export const heroImage = "https://res.cloudinary.com/dencbmqyy/image/upload/v1709176571/hero_image_mywmp8.png";
 
