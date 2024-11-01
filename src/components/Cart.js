@@ -68,7 +68,7 @@ const Cart = () => {
                             <h1 className="my-1 text-slate-800 text-sm font-semibold">Your cart is empty</h1>
                             <p className="text-slate-500 text-sm text-center font-semibold">Add items from a restaurant to start a new cart</p>
                             <Link to="/restaurants" className="mt-2">
-                                <button className="font-bold text-base text-white bg-orange-400 p-2">EXPLORE RESTAURANTS NEAR YOU</button>
+                                <button className="font-bold text-sm sm:text-base text-white bg-orange-400 py-1 px-2">EXPLORE RESTAURANTS NEAR YOU</button>
                             </Link>
                         </div>
                     </div>
@@ -132,16 +132,16 @@ const Cart = () => {
                                     </p>
                                 </div>
         
-                                <div className="w-1/4 flex justify-center items-center">
+                                <div className="w-1/5 sm:w-1/4 flex justify-center items-center">
                                     <div className="sm:m-2 m-1 flex justify-between items-center md:text-sm text-xs 
                                     text-green-600 border-[1px] border-green-500 rounded-sm">
-                                      <button className="py-2 px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
+                                      <button className="py-1 sm:py-2 px-1 sm:px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
                                         onClick={() => handleReduceItemQty(item)}
                                       >
                                         <AiOutlineMinus />
                                       </button>
-                                      <span className=" px-2 font-sans md:text-lg text-base leading-3 text-green-500">{item.cartQuantity}</span>
-                                      <button className="py-2 px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
+                                      <span className="px-1 sm:px-2 font-sans md:text-lg text-sm leading-[8px] sm:leading-3 text-green-500">{item.cartQuantity}</span>
+                                      <button className="py-1 sm:py-2 px-1 sm:px-2 border-none outline-none bg-none cursor-pointer hover:bg-slate-200"
                                         onClick={() => handleIncreaseItemQty(item)}  
                                       >
                                         <AiOutlinePlus />

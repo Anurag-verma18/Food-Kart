@@ -20,7 +20,7 @@
       return (
         <Provider store={appStore} >
             <div className="overflow-hidden">
-              <ToastContainer />
+              <ToastContainer style={{ width: "300px" }}/>
               <Header />
               <Outlet />
               <Footer />
