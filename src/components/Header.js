@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import { useDispatch ,useSelector } from "react-redux";
 import { cartTotalPrice } from "../utils/cartSlice";
@@ -15,9 +15,25 @@ const Header = () => {
   //console.log(cartItems);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleMenuClick = () => {
     setOpen(!open);
+  };
+
+  const handleHomeClick = () => {
+    navigate("/");
+    setOpen(false);
+  };
+
+  const handleRestaurantsClick = () => {
+    navigate("/restaurants");
+    setOpen(false);
+  };
+
+  const handleCartClick = () => {
+    navigate("/cart");
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -57,19 +73,21 @@ const Header = () => {
         left-0 md:w-auto w-full transition-all duration-700 ease-in ${open ? 'top-12 opacity-100 bg-white' : 'top-[-490px]'} 
         md:opacity-100 opacity-0`}
       >
-        <li className="md:px-4 my-3 md:my-0 text-2xl md:text-xl hover:text-orange-400">
-          <Link to="/">Home</Link>
+        <li className="md:px-4 my-3 md:my-0 text-xl hover:text-orange-400">
+          <span onClick={handleHomeClick} className="cursor-pointer">Home</span>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-2xl md:text-xl hover:text-orange-400">
-          <Link to="/restaurants">Restaurants</Link>
+        <li className="md:px-4 my-3 md:my-0 text-xl hover:text-orange-400">
+          <span onClick={handleRestaurantsClick} className="cursor-pointer">Restaurants</span>
         </li>
-        <li className="md:px-4 my-3 md:my-0 text-xl md:text-lg hover:text-orange-400">
-          <Link to="/cart" className="md:flex md:justify-between">
-            <span className="cursor-pointer mr-1 inline-flex items-center">
+        <li className="md:px-4 my-3 md:my-0 text-lg hover:text-orange-400">
+          <div className="md:flex md:justify-between cursor-pointer"
+            onClick={handleCartClick}
+          >
+            <span className="mr-1 inline-flex items-center">
               <BsHandbagFill />
             </span>
-            <span className="md:text-lg"> • {cartTotalQty}</span>
-          </Link>
+            <span className="md:text-lg inline-flex items-center"> • {cartTotalQty}</span>
+          </div>
         </li>
       </ul>
       

@@ -5,7 +5,10 @@ const useRestaurantMenu = (resId) => {
     const [resInfo, setResInfo] = useState(null);
 
     useEffect(() => {
-        fetchMenu();
+        setTimeout(() => {
+            fetchMenu();
+        }, 10000)
+        //fetchMenu();
     }, []);
 
     const fetchMenu = async () => {

@@ -41,8 +41,8 @@ const Home = () => {
             <h1 className="font-darkerGrotesque text-center lg:text-xl text-lg font-semibold">
               Get the full FoodKart experience
             </h1>
-            <p className="text-sm font-serif">
-              Scan the QR code with your camera. First delivery is free
+            <p className="text-[12px] sm:text-sm font-serif text-center">
+              Scan the QR code with your camera. <span className="block sm:inline">First delivery is free</span>
             </p>
           </div>
           <img
